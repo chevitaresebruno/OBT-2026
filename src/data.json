@@ -1,0 +1,54 @@
+[
+  {
+    "nome_equipe": "Tech Titans",
+    "descricao": "Aplicativo de gestão de tarefas com inteligência artificial para otimizar a produtividade de equipes remotas.",
+    "url_imagem_equipe": "https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?w=150&h=150&fit=crop&crop=center",
+    "url_youtube": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "url_app": "https://play.google.com/store/apps/details?id=com.example.techtitans",
+    "membros_equipe": [
+      { "nome": "Ana Silva", "imagem": "https://randomuser.me/api/portraits/women/44.jpg", "funcao": "Desenvolvedora Full Stack" },
+      { "nome": "Carlos Santos", "imagem": "https://randomuser.me/api/portraits/men/32.jpg", "funcao": "Engenheiro de IA" },
+      { "nome": "Mariana Costa", "imagem": "https://randomuser.me/api/portraits/women/68.jpg", "funcao": "UX/UI Designer" }
+    ],
+    "ods": [4, 9, 17]
+  },
+  {
+    "nome_equipe": "InovaKids",
+    "descricao": "Plataforma educativa com jogos interativos para ensinar programação a crianças de 8 a 12 anos.",
+    "url_imagem_equipe": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=150&h=150&fit=crop&crop=center",
+    "url_youtube": "https://www.youtube.com/embed/9bZkp7q19f0",
+    "url_app": "https://apps.apple.com/br/app/inovakids/id123456789",
+    "membros_equipe": [
+      { "nome": "João Pedro", "imagem": "https://randomuser.me/api/portraits/men/45.jpg", "funcao": "Pedagogo e Game Designer" },
+      { "nome": "Fernanda Lima", "imagem": "https://randomuser.me/api/portraits/women/12.jpg", "funcao": "Desenvolvedora Front-end" },
+      { "nome": "Rafael Souza", "imagem": "https://randomuser.me/api/portraits/men/22.jpg", "funcao": "Especialista em Gamificação" }
+    ],
+    "ods": [4, 10, 16]
+  },
+  {
+    "nome_equipe": "Green Future",
+    "descricao": "App que monitora o consumo de energia em residências e sugere ações para redução da pegada de carbono.",
+    "url_imagem_equipe": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=150&h=150&fit=crop&crop=center",
+    "url_youtube": "https://www.youtube.com/embed/3JZ_D3ELwOQ",
+    "url_app": "https://greenfuture.com.br/app",
+    "membros_equipe": [
+      { "nome": "Beatriz Oliveira", "imagem": "https://randomuser.me/api/portraits/women/90.jpg", "funcao": "Cientista de Dados" },
+      { "nome": "Lucas Mendes", "imagem": "https://randomuser.me/api/portraits/men/75.jpg", "funcao": "Desenvolvedor IoT" },
+      { "nome": "Camila Rocha", "imagem": "https://randomuser.me/api/portraits/women/33.jpg", "funcao": "Designer de Interfaces" }
+    ],
+    "ods": [7, 11, 13]
+  },
+  {
+    "nome_equipe": "Saúde+",
+    "descricao": "Sistema de agendamento de consultas e lembretes de medicamentos, integrado com prontuário eletrônico.",
+    "url_imagem_equipe": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=150&h=150&fit=crop&crop=center",
+    "url_youtube": "https://www.youtube.com/embed/5qap5aO4i9A",
+    "url_app": "https://saudemais.com/download",
+    "membros_equipe": [
+      { "nome": "Dr. Ricardo Almeida", "imagem": "https://randomuser.me/api/portraits/men/50.jpg", "funcao": "Médico e Product Owner" },
+      { "nome": "Tatiana Nunes", "imagem": "https://randomuser.me/api/portraits/women/17.jpg", "funcao": "Desenvolvedora Back-end" },
+      { "nome": "Felipe Barros", "imagem": "https://randomuser.me/api/portraits/men/88.jpg", "funcao": "Especialista em Segurança" }
+    ],
+    "ods": [3, 5, 10]
+  }
+]
