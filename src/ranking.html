@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classificação Final</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0b0f1a;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .team-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.2s;
+            cursor: grab;
+            user-select: none;
+        }
+        .team-card:active {
+            cursor: grabbing;
+        }
+        .team-card.dragging {
+            opacity: 0.4;
+            transform: scale(0.96);
+        }
+        .team-card.drag-over {
+            border-color: #818cf8;
+            background: rgba(129, 140, 248, 0.12);
+            transform: scale(1.02);
+        }
+        .team-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+        }
+        .medal {
+            font-size: 2rem;
+            line-height: 1;
+        }
+        .podium-1 {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 215, 0, 0.05));
+            border-color: #ffd700;
+            border-width: 2px;
+        }
+        .podium-2 {
+            background: linear-gradient(135deg, rgba(192, 192, 192, 0.15), rgba(192, 192, 192, 0.05));
+            border-color: #c0c0c0;
+            border-width: 2px;
+        }
+        .podium-3 {
+            background: linear-gradient(135deg, rgba(205, 127, 50, 0.15), rgba(205, 127, 50, 0.05));
+            border-color: #cd7f32;
+            border-width: 2px;
+        }
+        .btn-votar {
+            background: linear-gradient(135deg, #818cf8, #a78bfa);
+            transition: all 0.2s;
+        }
+        .btn-votar:hover:not(:disabled) {
+            transform: scale(1.03);
+            box-shadow: 0 8px 25px -6px rgba(129, 140, 248, 0.5);
+        }
+        .btn-votar:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        .nota-badge {
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 99px;
+            padding: 0.2rem 0.8rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #c4b5fd;
+            border: 1px solid rgba(129, 140, 248, 0.2);
+        }
+        .grip-icon {
+            color: #6b7280;
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+        }
+        #ranking-list {
+            list-style: none;
+            padding: 0;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-6 flex items-center justify-center">
+    <div class="max-w-4xl w-full glass-panel rounded-3xl p-8 md:p-10 shadow-2xl">
+        <h1 class="text-3xl md:text-4xl font-extrabold text-white text-center mb-2">
+            🏆 Classificação Final
+        </h1>
+        <p class="text-gray-400 text-center text-sm mb-8">
+            Suas notas definem a ordem inicial. <strong>Arraste</strong> qualquer equipe para reorganizar.
+        </p>
+
+        <div id="ranking-container">
+            <div class="text-center text-gray-400 py-10">Carregando...</div>
+        </div>
+
+        <div class="mt-10 text-center">
+            <button id="btn-votar" class="btn-votar px-10 py-3 rounded-xl text-white font-bold text-base tracking-wider shadow-lg">
+                🗳️ Votar
+            </button>
+            <p class="text-gray-500 text-xs mt-3">Ao votar, você confirma sua classificação e não poderá mais alterá-la.</p>
+        </div>
+
+        <div class="mt-6 text-center">
+            <a href="index.html" class="text-indigo-300 hover:text-indigo-200 text-sm font-medium underline underline-offset-2 transition">
+                ← Voltar para a lista
+            </a>
+        </div>
+    </div>
+
+    <script type="module">
+        import { vote } from "./VoteHandler.js"
+
+        (function() {
+            const container = document.getElementById('ranking-container');
+            const btnVotar = document.getElementById('btn-votar');
+
+            // ----- Constantes e chaves do storage -----
+            const STORAGE_VOTOS = 'votos_equipes';
+            const STORAGE_ORDEM = 'ranking_ordem_completa';
+            const STORAGE_FINALIZADO = 'votacao_finalizada';
+
+            let equipes = [];
+            let votos = [];
+            let ranking = []; // { index, nome, nota }
+            let ordemPersonalizada = []; // array de índices (posições no ranking)
+            let finalizado = false;
+
+            // ----- Carregar dados -----
+            function carregarDados() {
+                return fetch('data.json')
+                    .then(res => {
+                        if (!res.ok) throw new Error('Erro ao carregar data.json');
+                        return res.json();
+                    })
+                    .then(data => {
+                        equipes = data;
+                        carregarVotos();
+                        construirRanking();
+                        carregarOrdem();
+                        finalizado = localStorage.getItem(STORAGE_FINALIZADO) === 'true';
+                        renderizar();
+                    })
+                    .catch(err => {
+                        container.innerHTML = `<div class="text-center text-red-400">Erro: ${err.message}</div>`;
+                        console.error(err);
+                    });
+            }
+
+            function carregarVotos() {
+                try {
+                    const raw = localStorage.getItem(STORAGE_VOTOS);
+                    votos = raw ? JSON.parse(raw) : [];
+                } catch {
+                    votos = [];
+                }
+            }
+
+            function construirRanking() {
+                ranking = equipes.map((eq, idx) => {
+                    const voto = votos.find(v => v.index === idx);
+                    const nota = voto ? voto.nota : 1;
+                    return { index: idx, nome: eq.nome_equipe, nota };
+                });
+                ranking.sort((a, b) => b.nota - a.nota);
+            }
+
+            function carregarOrdem() {
+                try {
+                    const raw = localStorage.getItem(STORAGE_ORDEM);
+                    if (raw) {
+                        const parsed = JSON.parse(raw);
+                        if (Array.isArray(parsed) && parsed.length === ranking.length) {
+                            ordemPersonalizada = parsed;
+                            return;
+                        }
+                    }
+                } catch {}
+                ordemPersonalizada = ranking.map((_, i) => i);
+                salvarOrdem();
+            }
+
+            function salvarOrdem() {
+                localStorage.setItem(STORAGE_ORDEM, JSON.stringify(ordemPersonalizada));
+            }
+
+            // ----- Reordenação por drag -----
+            function reordenar(fromIndex, toIndex) {
+                if (finalizado) return;
+                if (fromIndex === toIndex) return;
+                const [item] = ordemPersonalizada.splice(fromIndex, 1);
+                ordemPersonalizada.splice(toIndex, 0, item);
+                salvarOrdem();
+                renderizar();
+            }
+
+            // ===== FUNÇÃO MODIFICADA: integração com objeto "vote" =====
+            function finalizarVotacao() {
+                if (finalizado) {
+                    alert('Votação já finalizada!');
+                    return;
+                }
+                if (ordemPersonalizada.length < 3) {
+                    alert('Não há equipes suficientes para formar o pódio.');
+                    return;
+                }
+
+                if (confirm('Você será redirecionado para a página do Google Forms.')) {
+                    // 1. Obter os três primeiros colocados (nomes)
+                    const primeiro = ranking[ordemPersonalizada[0]].nome;
+                    const segundo = ranking[ordemPersonalizada[1]].nome;
+                    const terceiro = ranking[ordemPersonalizada[2]].nome;
+
+                    // 2. Verificar se o objeto "vote" existe e tem os métodos necessários
+                    if (typeof vote !== 'undefined' &&
+                        typeof vote.set_primeiro === 'function' &&
+                        typeof vote.set_segundo === 'function' &&
+                        typeof vote.set_terceiro === 'function' &&
+                        typeof vote.get_url === 'function') {
+
+                        // Chamar os métodos com os nomes
+                        vote.set_primeiro(primeiro);
+                        vote.set_segundo(segundo);
+                        vote.set_terceiro(terceiro);
+
+                        // Obter a URL e abrir em nova aba
+                        const url = vote.get_url();
+                        if (url) {
+                            window.open(url, '_blank');
+                        } else {
+                            alert('A URL retornada está vazia.');
+                        }
+                    } else {
+                        alert('Objeto "vote" não encontrado ou métodos ausentes. Verifique se ele está definido globalmente.');
+                        return; // Não prossegue com a finalização
+                    }
+
+                    // 3. Marcar como finalizado no localStorage
+                    localStorage.setItem(STORAGE_FINALIZADO, 'true');
+                    finalizado = true;
+                    renderizar();
+                    alert('✅ Votação finalizada com sucesso! Obrigado por participar.');
+                }
+            }
+
+            // ----- Renderização com Drag & Drop -----
+            function renderizar() {
+                if (!ranking.length || !ordemPersonalizada.length) {
+                    container.innerHTML = '<div class="text-center text-gray-400">Nenhuma equipe encontrada.</div>';
+                    return;
+                }
+
+                const itensOrdenados = ordemPersonalizada.map(pos => ranking[pos]);
+
+                let html = '<ul id="ranking-list" class="space-y-3">';
+                itensOrdenados.forEach((equipe, index) => {
+                    const pos = index + 1;
+                    const nota = equipe.nota.toFixed(1);
+                    let classePodium = '';
+                    let medalha = '';
+                    if (pos === 1) {
+                        classePodium = 'podium-1';
+                        medalha = '🥇';
+                    } else if (pos === 2) {
+                        classePodium = 'podium-2';
+                        medalha = '🥈';
+                    } else if (pos === 3) {
+                        classePodium = 'podium-3';
+                        medalha = '🥉';
+                    }
+                    const posNoRanking = ordemPersonalizada[index];
+
+                    html += `
+                        <li class="team-card rounded-xl p-4 flex items-center justify-between ${classePodium} border"
+                            draggable="${!finalizado}"
+                            data-pos="${posNoRanking}"
+                            data-index="${index}"
+                            data-ordenado="${index}">
+                            <div class="flex items-center gap-3 flex-1 min-w-0">
+                                <span class="grip-icon">⠿</span>
+                                ${medalha ? `<span class="medal">${medalha}</span>` : ''}
+                                <span class="text-white font-medium truncate">${equipe.nome}</span>
+                            </div>
+                            <div class="flex items-center gap-3 flex-shrink-0">
+                                <span class="nota-badge">⭐ ${nota}</span>
+                            </div>
+                        </li>
+                    `;
+                });
+                html += '</ul>';
+                container.innerHTML = html;
+
+                if (finalizado) {
+                    document.querySelectorAll('.team-card').forEach(el => el.style.cursor = 'default');
+                }
+
+                // ----- Configurar eventos de drag and drop -----
+                const list = document.getElementById('ranking-list');
+                let dragStartIndex = null;
+
+                list.addEventListener('dragstart', (e) => {
+                    if (finalizado) {
+                        e.preventDefault();
+                        return;
+                    }
+                    const li = e.target.closest('.team-card');
+                    if (!li) return;
+                    dragStartIndex = parseInt(li.dataset.ordenado, 10);
+                    e.dataTransfer.effectAllowed = 'move';
+                    e.dataTransfer.setData('text/plain', dragStartIndex);
+                    requestAnimationFrame(() => {
+                        li.classList.add('dragging');
+                    });
+                });
+
+                list.addEventListener('dragend', (e) => {
+                    const li = e.target.closest('.team-card');
+                    if (li) li.classList.remove('dragging');
+                    document.querySelectorAll('.team-card.drag-over').forEach(el => el.classList.remove('drag-over'));
+                });
+
+                list.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    e.dataTransfer.dropEffect = 'move';
+                });
+
+                list.addEventListener('dragenter', (e) => {
+                    e.preventDefault();
+                    const targetLi = e.target.closest('.team-card');
+                    if (!targetLi) return;
+                    const targetIndex = parseInt(targetLi.dataset.ordenado, 10);
+                    if (targetIndex === dragStartIndex) return;
+                    targetLi.classList.add('drag-over');
+                });
+
+                list.addEventListener('dragleave', (e) => {
+                    e.preventDefault();
+                    const targetLi = e.target.closest('.team-card');
+                    if (targetLi) targetLi.classList.remove('drag-over');
+                });
+
+                list.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    document.querySelectorAll('.team-card.drag-over').forEach(el => el.classList.remove('drag-over'));
+                    const targetLi = e.target.closest('.team-card');
+                    if (!targetLi) return;
+                    const targetIndex = parseInt(targetLi.dataset.ordenado, 10);
+                    if (dragStartIndex === null || dragStartIndex === targetIndex) return;
+                    reordenar(dragStartIndex, targetIndex);
+                    dragStartIndex = null;
+                });
+
+                // Atualiza botão votar
+                if (finalizado) {
+                    btnVotar.textContent = '✅ Votação finalizada';
+                    btnVotar.disabled = true;
+                } else {
+                    btnVotar.textContent = '🗳️ Votar';
+                    btnVotar.disabled = false;
+                }
+            }
+
+            btnVotar.addEventListener('click', finalizarVotacao);
+
+            carregarDados();
+        })();
+    </script>
+</body>
+</html>

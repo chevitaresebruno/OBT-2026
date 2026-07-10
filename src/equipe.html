@@ -42,15 +42,6 @@
             opacity: 0.3;
             cursor: not-allowed;
         }
-        .btn-votar {
-            background: linear-gradient(135deg, #818cf8, #a78bfa);
-            transition: all 0.2s;
-        }
-        .btn-votar:hover {
-            transform: scale(1.03);
-            box-shadow: 0 8px 25px -6px rgba(129, 140, 248, 0.5);
-        }
-        /* ODS badge na página de detalhe */
         .ods-badge-detail {
             display: inline-flex;
             align-items: center;
@@ -75,6 +66,141 @@
             color: #a5b4fc;
             font-size: 0.9rem;
         }
+
+        /* ---------- NOVO SLIDER ESTILIZADO ---------- */
+        .slider-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(255,255,255,0.03);
+            padding: 0.5rem 1.2rem;
+            border-radius: 99px;
+            border: 1px solid rgba(255,255,255,0.06);
+            backdrop-filter: blur(4px);
+            transition: border-color 0.3s;
+        }
+        .slider-container:hover {
+            border-color: rgba(129, 140, 248, 0.3);
+        }
+        .slider-label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #c4b5fd;
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+        }
+        /* Custom range input */
+        input[type="range"].slider-voto {
+            -webkit-appearance: none;
+            appearance: none;
+            background: transparent;
+            cursor: pointer;
+            width: 140px;
+            height: 6px;
+            border-radius: 99px;
+            background: linear-gradient(90deg, #4f46e5, #a78bfa, #f472b6);
+            outline: none;
+            transition: background 0.2s;
+        }
+        input[type="range"].slider-voto:focus {
+            outline: none;
+        }
+        /* Thumb para WebKit (Chrome, Safari) */
+        input[type="range"].slider-voto::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 35%, #c084fc, #818cf8);
+            border: 2px solid rgba(255,255,255,0.8);
+            box-shadow: 0 0 12px rgba(129, 140, 248, 0.6);
+            transition: 0.15s ease;
+            margin-top: -7px; /* alinha com a track */
+        }
+        input[type="range"].slider-voto::-webkit-slider-thumb:hover {
+            transform: scale(1.15);
+            box-shadow: 0 0 20px rgba(129, 140, 248, 0.9);
+        }
+        input[type="range"].slider-voto::-webkit-slider-runnable-track {
+            height: 6px;
+            border-radius: 99px;
+            background: transparent; /* usamos o background no próprio input */
+        }
+        /* Thumb para Firefox */
+        input[type="range"].slider-voto::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 35%, #c084fc, #818cf8);
+            border: 2px solid rgba(255,255,255,0.8);
+            box-shadow: 0 0 12px rgba(129, 140, 248, 0.6);
+            cursor: pointer;
+        }
+        input[type="range"].slider-voto::-moz-range-track {
+            height: 6px;
+            border-radius: 99px;
+            background: linear-gradient(90deg, #4f46e5, #a78bfa, #f472b6);
+            border: none;
+        }
+        /* Estrelas ou nota visual */
+        .nota-display {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            min-width: 60px;
+        }
+        .nota-numero {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #f0f0ff;
+            width: 2.2rem;
+            text-align: center;
+            font-variant-numeric: tabular-nums;
+        }
+        .nota-estrelas {
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            color: #fbbf24;
+            text-shadow: 0 0 8px rgba(251, 191, 36, 0.3);
+            transition: 0.2s;
+        }
+        .nota-estrelas .vazia {
+            opacity: 0.25;
+        }
+        /* Botão de reset (opcional) */
+        .btn-reset-nota {
+            background: none;
+            border: none;
+            color: #94a3b8;
+            font-size: 0.8rem;
+            cursor: pointer;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            transition: 0.2s;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid transparent;
+        }
+        .btn-reset-nota:hover {
+            color: #f1f5f9;
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(255,255,255,0.1);
+        }
+        /* Responsivo */
+        @media (max-width: 640px) {
+            .slider-container {
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 0.5rem 1rem;
+                border-radius: 1.5rem;
+            }
+            input[type="range"].slider-voto {
+                width: 100px;
+            }
+            .nota-display {
+                min-width: 50px;
+            }
+        }
     </style>
 </head>
 <body class="min-h-screen p-6 flex items-center justify-center">
@@ -83,20 +209,31 @@
             <div class="text-center text-gray-400 py-10">Carregando...</div>
         </div>
 
-        <!-- Navegação e botão Votar -->
-        <div class="flex flex-wrap items-center justify-between gap-4 mt-10 pt-6 border-t border-white/10">
-            <div class="flex gap-3">
+        <!-- Navegação e Slider de Votação -->
+        <div class="items-center gap-4 mt-10 pt-6 border-t border-white/10">
+            <div class="text-center mb-10">
+                <span id="indice-equipe" class="text-sm text-gray-400 font-mono"></span>
+            </div>
+
+            <div class="flex gap-3 justify-center">
                 <button id="btn-anterior" class="btn-nav px-6 py-2.5 rounded-xl text-white font-medium text-sm">
                     ⬅ Anterior
                 </button>
+
+                <div class="slider-container">
+                    <span class="slider-label">⭐ Nota</span>
+                    <input type="range" class="slider-voto" id="slider-voto" min="1" max="5" step="any" value="1" />
+                    <div class="nota-display">
+                        <span class="nota-numero" id="valor-nota">1.0</span>
+                        <span class="nota-estrelas" id="estrelas-nota">★☆☆☆☆</span>
+                        <button class="btn-reset-nota" id="btn-reset-nota" title="Limpar nota">✕</button>
+                    </div>
+                </div>
+
                 <button id="btn-proximo" class="btn-nav px-6 py-2.5 rounded-xl text-white font-medium text-sm">
                     Próximo ➡
                 </button>
             </div>
-            <span id="indice-equipe" class="text-sm text-gray-400 font-mono"></span>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfxnKS0xr2vS1-ZWh8OLGl1LhWyc5josoYOrk7IwVYZRw8J-Q/viewform?usp=publish-editor" id="btn-votar" class="btn-votar px-8 py-2.5 rounded-xl text-white font-bold text-sm tracking-wider shadow-lg">
-                🗳️ Votar
-            </a>
         </div>
 
         <div class="mt-6 text-center">
@@ -115,8 +252,11 @@
             const container = document.getElementById('detalhe-container');
             const btnAnterior = document.getElementById('btn-anterior');
             const btnProximo = document.getElementById('btn-proximo');
-            const btnVotar = document.getElementById('btn-votar');
             const indiceSpan = document.getElementById('indice-equipe');
+            const slider = document.getElementById('slider-voto');
+            const valorSpan = document.getElementById('valor-nota');
+            const estrelasSpan = document.getElementById('estrelas-nota');
+            const btnReset = document.getElementById('btn-reset-nota');
 
             // Mapeamento dos ODS (nomes oficiais em português)
             const odsNomes = {
@@ -139,9 +279,7 @@
                 17: "Parcerias e meios de implementação"
             };
 
-            let equipes = [];
-
-           const odsMap = {
+            const odsMap = {
                 1: { emoji: '🛑', cor: '#e5243b', nome: 'Erradicação da pobreza' },
                 2: { emoji: '🌾', cor: '#dda63a', nome: 'Fome zero' },
                 3: { emoji: '🏥', cor: '#4c9f38', nome: 'Saúde e bem-estar' },
@@ -161,6 +299,8 @@
                 17: { emoji: '🤝', cor: '#19486a', nome: 'Parcerias e meios de implementação' }
             };
 
+            let equipes = [];
+
             function renderODS(odsArray) {
                 if (!odsArray || odsArray.length === 0) return '';
                 return odsArray.map(num => {
@@ -172,18 +312,141 @@
                 }).join('');
             }
 
+            // ----- LÓGICA DO SLIDER E LOCALSTORAGE -----
+            const STORAGE_KEY = 'votos_equipes';
+
+            function carregarVotos() {
+                try {
+                    const data = localStorage.getItem(STORAGE_KEY);
+                    return data ? JSON.parse(data) : [];
+                } catch {
+                    return [];
+                }
+            }
+
+            function salvarVotos(votos) {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(votos));
+            }
+
+            function obterNotaDoIndex(idx) {
+                const votos = carregarVotos();
+                const voto = votos.find(v => v.index === idx);
+                return voto ? voto.nota : null;
+            }
+
+            // Função para atualizar a exibição das estrelas
+            function atualizarEstrelas(nota) {
+                if (nota === null || nota === undefined) nota = 1; // fallback
+                const estrelasCheias = Math.floor(nota);
+                const fracao = nota - estrelasCheias;
+                // Construir string com estrelas cheias, meia estrela e vazias
+                let estrelas = '';
+                for (let i = 0; i < 5; i++) {
+                    if (i < estrelasCheias) {
+                        estrelas += '★';
+                    } else if (i === estrelasCheias && fracao >= 0.5) {
+                        estrelas += '★'; // ou meia estrela, mas usaremos cheia para simplificar
+                    } else {
+                        estrelas += '☆';
+                    }
+                }
+                // Ajustar para mostrar meia estrela se for o caso (usando símbolo especial)
+                // Vamos usar uma representação mais simples: se nota >= 0.5 a mais que o inteiro, mostramos meia estrela com um símbolo
+                if (fracao >= 0.25 && fracao < 0.75) {
+                    // substituir a estrela vazia ou cheia por meia
+                    // Para simplificar, usamos ★ e ☆ apenas, mas podemos usar um Unicode de meia estrela: ½
+                    // Ou podemos manter apenas cheio/vazio e arredondar para o inteiro mais próximo.
+                    // Vou optar por mostrar estrelas cheias até o valor inteiro e depois uma estrela parcial.
+                    let estrelasMeia = '';
+                    for (let i = 0; i < 5; i++) {
+                        if (i < Math.floor(nota)) {
+                            estrelasMeia += '★';
+                        } else if (i === Math.floor(nota) && (nota - Math.floor(nota)) >= 0.5) {
+                            estrelasMeia += '★'; // usei cheia, mas poderia ser um símbolo de meia
+                        } else {
+                            estrelasMeia += '☆';
+                        }
+                    }
+                    estrelas = estrelasMeia;
+                }
+                // Para notas com .5 exato, mostrar meia estrela (usando símbolo)
+                if (Number.isInteger(nota * 2) && (nota * 2) % 2 !== 0) {
+                    // nota é .5
+                    let estrelasMeia = '';
+                    for (let i = 0; i < 5; i++) {
+                        if (i < Math.floor(nota)) {
+                            estrelasMeia += '★';
+                        } else if (i === Math.floor(nota)) {
+                            estrelasMeia += '★'; // poderia ser ½, mas vou usar ★ para manter
+                        } else {
+                            estrelasMeia += '☆';
+                        }
+                    }
+                    estrelas = estrelasMeia;
+                }
+                estrelasSpan.textContent = estrelas;
+            }
+
+            function atualizarSlider() {
+                const nota = obterNotaDoIndex(index);
+                if (nota !== null) {
+                    slider.value = nota;
+                    valorSpan.textContent = nota.toFixed(1);
+                    atualizarEstrelas(nota);
+                } else {
+                    slider.value = 1;
+                    valorSpan.textContent = '1.0';
+                    atualizarEstrelas(1);
+                }
+            }
+
+            function salvarNota(idx, nota) {
+                let votos = carregarVotos();
+                const existente = votos.find(v => v.index === idx);
+                if (existente) {
+                    existente.nota = nota;
+                } else {
+                    votos.push({ index: idx, nota: nota });
+                }
+                salvarVotos(votos);
+            }
+
+            // Eventos do slider
+            slider.addEventListener('input', function() {
+                const val = parseFloat(this.value);
+                valorSpan.textContent = val.toFixed(1);
+                atualizarEstrelas(val);
+            });
+
+            slider.addEventListener('change', function() {
+                const val = parseFloat(this.value);
+                salvarNota(index, val);
+            });
+
+            // Resetar nota (remove do localStorage para este índice)
+            btnReset.addEventListener('click', function() {
+                let votos = carregarVotos();
+                votos = votos.filter(v => v.index !== index);
+                salvarVotos(votos);
+                // Atualiza slider para valor padrão 1
+                slider.value = 1;
+                valorSpan.textContent = '1.0';
+                atualizarEstrelas(1);
+                // feedback opcional
+            });
+
+            // ----- FIM LÓGICA SLIDER -----
+
             function renderEquipe(pos) {
                 if (!equipes.length || pos < 0 || pos >= equipes.length) {
                     container.innerHTML = '<div class="text-center text-red-400">Equipe não encontrada.</div>';
                     btnAnterior.disabled = true;
                     btnProximo.disabled = true;
-                    btnVotar.style.display = 'none';
                     indiceSpan.textContent = '';
                     return;
                 }
 
                 const eq = equipes[pos];
-                // Monta HTML dos membros
                 let membrosHTML = '';
                 if (eq.membros_equipe && eq.membros_equipe.length) {
                     membrosHTML = `
@@ -202,7 +465,6 @@
                     `;
                 }
 
-                // ODS – gera badges com tooltip
                 let odsHTML = '';
                 if (eq.ods && eq.ods.length) {
                     const badges = eq.ods.map(num => `
@@ -223,7 +485,7 @@
                     `;
                 }
 
-                const odsHtml = renderODS(eq.ods || []); // precisa ter a função renderODS e odsMap definidos antes
+                const odsHtml = renderODS(eq.ods || []);
 
                 container.innerHTML = `
                     <div class="text-center">
@@ -232,7 +494,6 @@
                         <h1 class="text-3xl md:text-4xl font-extrabold text-white mt-4">${eq.nome_equipe}</h1>
                         <p class="text-gray-300 mt-3 text-base md:text-lg max-w-2xl mx-auto">${eq.descricao}</p>
                         
-                        <!-- Selos ODS -->
                         <div class="flex flex-wrap justify-center gap-2 mt-4">
                             ${odsHtml}
                         </div>
@@ -251,10 +512,14 @@
                 `;
 
                 btnAnterior.disabled = (pos === 0);
-                btnProximo.disabled = (pos === equipes.length - 1);
+                if(pos === equipes.length - 1) {
+                    btnProximo.innerText = "🗳️ Votar";
+                    btnProximo.onclick = function(){window.location.href="/src/ranking.html"};
+                }
                 indiceSpan.textContent = `${pos + 1} / ${equipes.length}`;
-                btnVotar.style.display = 'inline-block';
-                btnVotar.href = '#';
+
+                // Atualiza o slider com a nota salva
+                atualizarSlider();
             }
 
             function carregarDados() {
