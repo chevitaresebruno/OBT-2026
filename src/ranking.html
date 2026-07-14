@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Classificação Final</title>
+    <title>Votação por Pontuação</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <style>
@@ -11,79 +11,95 @@
             font-family: 'Inter', sans-serif;
             background: #0b0f1a;
         }
+
         .glass-panel {
             background: rgba(255, 255, 255, 0.04);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.06);
         }
+
         .team-card {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.06);
-            transition: all 0.2s;
-            cursor: grab;
-            user-select: none;
+            transition: background 0.2s, border-color 0.2s, transform 0.2s;
         }
-        .team-card:active {
-            cursor: grabbing;
-        }
-        .team-card.dragging {
-            opacity: 0.4;
-            transform: scale(0.96);
-        }
-        .team-card.drag-over {
-            border-color: #818cf8;
-            background: rgba(129, 140, 248, 0.12);
-            transform: scale(1.02);
-        }
+
         .team-card:hover {
             background: rgba(255, 255, 255, 0.06);
         }
-        .medal {
-            font-size: 2rem;
-            line-height: 1;
-        }
+
         .podium-1 {
             background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 215, 0, 0.05));
             border-color: #ffd700;
             border-width: 2px;
         }
+
         .podium-2 {
             background: linear-gradient(135deg, rgba(192, 192, 192, 0.15), rgba(192, 192, 192, 0.05));
             border-color: #c0c0c0;
             border-width: 2px;
         }
+
         .podium-3 {
             background: linear-gradient(135deg, rgba(205, 127, 50, 0.15), rgba(205, 127, 50, 0.05));
             border-color: #cd7f32;
             border-width: 2px;
         }
+
+        .rank-position {
+            width: 2.75rem;
+            height: 2.75rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 999px;
+            background: rgba(129, 140, 248, 0.14);
+            border: 1px solid rgba(129, 140, 248, 0.28);
+            color: #c4b5fd;
+            font-weight: 800;
+            flex: 0 0 auto;
+        }
+
+        .nota-input {
+            width: 7.5rem;
+            background: rgba(15, 23, 42, 0.88);
+            border: 1px solid rgba(129, 140, 248, 0.35);
+            border-radius: 0.85rem;
+            color: #fff;
+            font-weight: 800;
+            padding: 0.7rem 0.9rem;
+            text-align: center;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+        }
+
+        .nota-input:focus {
+            border-color: #a78bfa;
+            box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.2);
+            background: rgba(15, 23, 42, 1);
+        }
+
+        .nota-input:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+        }
+
         .btn-votar {
             background: linear-gradient(135deg, #818cf8, #a78bfa);
             transition: all 0.2s;
         }
+
         .btn-votar:hover:not(:disabled) {
             transform: scale(1.03);
             box-shadow: 0 8px 25px -6px rgba(129, 140, 248, 0.5);
         }
+
         .btn-votar:disabled {
             opacity: 0.6;
             cursor: not-allowed;
         }
-        .nota-badge {
-            background: rgba(255, 255, 255, 0.06);
-            border-radius: 99px;
-            padding: 0.2rem 0.8rem;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #c4b5fd;
-            border: 1px solid rgba(129, 140, 248, 0.2);
-        }
-        .grip-icon {
-            color: #6b7280;
-            font-size: 1.2rem;
-            margin-right: 0.5rem;
-        }
+
         #ranking-list {
             list-style: none;
             padding: 0;
@@ -91,12 +107,12 @@
     </style>
 </head>
 <body class="min-h-screen p-6 flex items-center justify-center">
-    <div class="max-w-4xl w-full glass-panel rounded-3xl p-8 md:p-10 shadow-2xl">
+    <div class="max-w-5xl w-full glass-panel rounded-3xl p-8 md:p-10 shadow-2xl">
         <h1 class="text-3xl md:text-4xl font-extrabold text-white text-center mb-2">
-            🏆 Classificação Final
+            Classificação Final
         </h1>
         <p class="text-gray-400 text-center text-sm mb-8">
-            Suas notas definem a ordem inicial. <strong>Arraste</strong> qualquer equipe para reorganizar.
+            Atribua notas de 1 a 5. A lista será ordenada pela maior pontuação.
         </p>
 
         <div id="ranking-container">
@@ -105,9 +121,9 @@
 
         <div class="mt-10 text-center">
             <button id="btn-votar" class="btn-votar px-10 py-3 rounded-xl text-white font-bold text-base tracking-wider shadow-lg">
-                🗳️ Votar
+                Votar
             </button>
-            <p class="text-gray-500 text-xs mt-3">Ao votar, você confirma sua classificação e não poderá mais alterá-la.</p>
+            <p class="text-gray-500 text-xs mt-3">Ao votar, você será direcionado para o formulário com as pontuações preenchidas.</p>
         </div>
 
         <div class="mt-6 text-center">
@@ -117,182 +133,223 @@
         </div>
     </div>
 
+    <script src="data.js"></script>
     <script type="module">
-        import { vote } from "./VoteHandler.js"
+        import { vote } from "./VoteHandler.js";
 
         (function() {
             const container = document.getElementById('ranking-container');
             const btnVotar = document.getElementById('btn-votar');
 
-            // ----- Constantes e chaves do storage -----
             const STORAGE_VOTOS = 'votos_equipes';
-            const STORAGE_ORDEM = 'ranking_ordem_completa';
-            const STORAGE_FINALIZADO = 'votacao_finalizada';
+            const STORAGE_FINALIZADO = 'votacao_finalizada_notas';
 
             let equipes = [];
             let votos = [];
-            let ranking = []; // { index, nome, nota }
-            let ordemPersonalizada = []; // array de índices (posições no ranking)
+            let ranking = [];
             let finalizado = false;
 
-            // ----- Carregar dados -----
-            function carregarDados() {
+            function obterDadosEquipes() {
+                const dadosLocais = Array.isArray(window.EQUIPES_DATA) ? window.EQUIPES_DATA : null;
+
+                if (window.location.protocol === 'file:' && dadosLocais) {
+                    return Promise.resolve(dadosLocais);
+                }
+
                 return fetch('data.json')
                     .then(res => {
                         if (!res.ok) throw new Error('Erro ao carregar data.json');
                         return res.json();
                     })
-                    .then(data => {
-                        equipes = data;
-                        carregarVotos();
-                        construirRanking();
-                        carregarOrdem();
-                        finalizado = localStorage.getItem(STORAGE_FINALIZADO) === 'true';
-                        renderizar();
-                    })
                     .catch(err => {
-                        container.innerHTML = `<div class="text-center text-red-400">Erro: ${err.message}</div>`;
-                        console.error(err);
+                        if (dadosLocais) {
+                            console.warn('Usando dados locais de data.js como fallback.', err);
+                            return dadosLocais;
+                        }
+                        throw err;
                     });
+            }
+
+            function normalizarNota(valor, fallback = 1) {
+                const numero = Number(String(valor ?? '').trim().replace(',', '.'));
+                if (!Number.isFinite(numero)) return fallback;
+                if (numero < 1) return 1;
+                if (numero > 5) return 5;
+                return numero;
+            }
+
+            function formatarNota(valor) {
+                return String(normalizarNota(valor));
+            }
+
+            function escaparHtml(valor) {
+                return String(valor ?? '')
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/'/g, '&#039;');
             }
 
             function carregarVotos() {
                 try {
                     const raw = localStorage.getItem(STORAGE_VOTOS);
                     votos = raw ? JSON.parse(raw) : [];
+                    if (!Array.isArray(votos)) votos = [];
                 } catch {
                     votos = [];
                 }
             }
 
-            function construirRanking() {
-                ranking = equipes.map((eq, idx) => {
-                    const voto = votos.find(v => v.index === idx);
-                    const nota = voto ? voto.nota : 1;
-                    return { index: idx, nome: eq.nome_equipe, nota };
-                });
-                ranking.sort((a, b) => b.nota - a.nota);
+            function salvarVotos() {
+                localStorage.setItem(STORAGE_VOTOS, JSON.stringify(votos));
             }
 
-            function carregarOrdem() {
-                try {
-                    const raw = localStorage.getItem(STORAGE_ORDEM);
-                    if (raw) {
-                        const parsed = JSON.parse(raw);
-                        if (Array.isArray(parsed) && parsed.length === ranking.length) {
-                            ordemPersonalizada = parsed;
-                            return;
-                        }
+            function obterNotaInicial(equipe, index) {
+                const votoSalvo = votos.find(v => v.index === index || v.id === equipe.id);
+                if (votoSalvo) return normalizarNota(votoSalvo.nota);
+
+                if (typeof vote !== 'undefined' && typeof vote.get_value === 'function') {
+                    const notaDoHandler = vote.get_value(equipe.id);
+                    if (notaDoHandler !== '' && notaDoHandler !== undefined && notaDoHandler !== null) {
+                        return normalizarNota(notaDoHandler);
                     }
-                } catch {}
-                ordemPersonalizada = ranking.map((_, i) => i);
-                salvarOrdem();
+                }
+
+                return 1;
             }
 
-            function salvarOrdem() {
-                localStorage.setItem(STORAGE_ORDEM, JSON.stringify(ordemPersonalizada));
+            function construirRanking() {
+                ranking = equipes.map((eq, index) => ({
+                    id: eq.id,
+                    index,
+                    nome: eq.nome_equipe,
+                    nota: obterNotaInicial(eq, index)
+                }));
+                ordenarRanking();
             }
 
-            // ----- Reordenação por drag -----
-            function reordenar(fromIndex, toIndex) {
+            function ordenarRanking() {
+                ranking.sort((a, b) => {
+                    if (b.nota !== a.nota) return b.nota - a.nota;
+                    return a.index - b.index;
+                });
+            }
+
+            function salvarNotaDaEquipe(item) {
+                const existente = votos.find(v => v.index === item.index || v.id === item.id);
+                if (existente) {
+                    existente.index = item.index;
+                    existente.id = item.id;
+                    existente.nota = item.nota;
+                } else {
+                    votos.push({ index: item.index, id: item.id, nota: item.nota });
+                }
+                salvarVotos();
+            }
+
+            function atualizarNota(equipeId, valor) {
                 if (finalizado) return;
-                if (fromIndex === toIndex) return;
-                const [item] = ordemPersonalizada.splice(fromIndex, 1);
-                ordemPersonalizada.splice(toIndex, 0, item);
-                salvarOrdem();
-                renderizar();
+
+                const item = ranking.find(eq => eq.id === equipeId);
+                if (!item) return;
+
+                item.nota = normalizarNota(valor, item.nota);
+                salvarNotaDaEquipe(item);
+                ordenarRanking();
+                renderizar(equipeId);
             }
 
-            // ===== FUNÇÃO MODIFICADA: integração com objeto "vote" =====
+            function sincronizarInputsAtuais() {
+                document.querySelectorAll('.nota-input').forEach(input => {
+                    const item = ranking.find(eq => eq.id === input.dataset.id);
+                    if (!item) return;
+                    item.nota = normalizarNota(input.value, item.nota);
+                    salvarNotaDaEquipe(item);
+                });
+                ordenarRanking();
+            }
+
+            function enviarPontuacoesParaVoteHandler() {
+                if (typeof vote === 'undefined' ||
+                    typeof vote.set_value !== 'function' ||
+                    typeof vote.get_url !== 'function') {
+                    throw new Error('VoteHandler não encontrado ou métodos ausentes.');
+                }
+
+                ranking.forEach(equipe => {
+                    vote.set_value(equipe.id, String(equipe.nota));
+                });
+
+                const url = vote.get_url();
+                if (!url) throw new Error('A URL retornada está vazia.');
+                return url;
+            }
+
             function finalizarVotacao() {
                 if (finalizado) {
                     alert('Votação já finalizada!');
                     return;
                 }
-                if (ordemPersonalizada.length < 3) {
-                    alert('Não há equipes suficientes para formar o pódio.');
+
+                sincronizarInputsAtuais();
+
+                if (!confirm('Você será redirecionado para a página do Google Forms.')) {
+                    renderizar();
                     return;
                 }
 
-                if (confirm('Você será redirecionado para a página do Google Forms.')) {
-                    // 1. Obter os três primeiros colocados (nomes)
-                    const primeiro = ranking[ordemPersonalizada[0]].nome;
-                    const segundo = ranking[ordemPersonalizada[1]].nome;
-                    const terceiro = ranking[ordemPersonalizada[2]].nome;
-
-                    // 2. Verificar se o objeto "vote" existe e tem os métodos necessários
-                    if (typeof vote !== 'undefined' &&
-                        typeof vote.set_primeiro === 'function' &&
-                        typeof vote.set_segundo === 'function' &&
-                        typeof vote.set_terceiro === 'function' &&
-                        typeof vote.get_url === 'function') {
-
-                        // Chamar os métodos com os nomes
-                        vote.set_primeiro(primeiro);
-                        vote.set_segundo(segundo);
-                        vote.set_terceiro(terceiro);
-
-                        // Obter a URL e abrir em nova aba
-                        const url = vote.get_url();
-                        if (url) {
-                            window.open(url, '_blank');
-                        } else {
-                            alert('A URL retornada está vazia.');
-                        }
-                    } else {
-                        alert('Objeto "vote" não encontrado ou métodos ausentes. Verifique se ele está definido globalmente.');
-                        return; // Não prossegue com a finalização
-                    }
-
-                    // 3. Marcar como finalizado no localStorage
+                try {
+                    const url = enviarPontuacoesParaVoteHandler();
+                    window.open(url, '_blank');
                     localStorage.setItem(STORAGE_FINALIZADO, 'true');
                     finalizado = true;
                     renderizar();
-                    alert('✅ Votação finalizada com sucesso! Obrigado por participar.');
+                    alert('Votação finalizada com sucesso! Obrigado por participar.');
+                } catch (err) {
+                    alert(err.message);
+                    console.error(err);
                 }
             }
 
-            // ----- Renderização com Drag & Drop -----
-            function renderizar() {
-                if (!ranking.length || !ordemPersonalizada.length) {
+            function classePodium(posicao) {
+                if (posicao === 1) return 'podium-1';
+                if (posicao === 2) return 'podium-2';
+                if (posicao === 3) return 'podium-3';
+                return '';
+            }
+
+            function renderizar(focoId = null) {
+                if (!ranking.length) {
                     container.innerHTML = '<div class="text-center text-gray-400">Nenhuma equipe encontrada.</div>';
                     return;
                 }
 
-                const itensOrdenados = ordemPersonalizada.map(pos => ranking[pos]);
-
                 let html = '<ul id="ranking-list" class="space-y-3">';
-                itensOrdenados.forEach((equipe, index) => {
-                    const pos = index + 1;
-                    const nota = equipe.nota.toFixed(1);
-                    let classePodium = '';
-                    let medalha = '';
-                    if (pos === 1) {
-                        classePodium = 'podium-1';
-                        medalha = '🥇';
-                    } else if (pos === 2) {
-                        classePodium = 'podium-2';
-                        medalha = '🥈';
-                    } else if (pos === 3) {
-                        classePodium = 'podium-3';
-                        medalha = '🥉';
-                    }
-                    const posNoRanking = ordemPersonalizada[index];
-
+                ranking.forEach((equipe, index) => {
+                    const posicao = index + 1;
                     html += `
-                        <li class="team-card rounded-xl p-4 flex items-center justify-between ${classePodium} border"
-                            draggable="${!finalizado}"
-                            data-pos="${posNoRanking}"
-                            data-index="${index}"
-                            data-ordenado="${index}">
-                            <div class="flex items-center gap-3 flex-1 min-w-0">
-                                <span class="grip-icon">⠿</span>
-                                ${medalha ? `<span class="medal">${medalha}</span>` : ''}
-                                <span class="text-white font-medium truncate">${equipe.nome}</span>
+                        <li class="team-card rounded-xl p-4 flex flex-col gap-4 md:flex-row md:items-center md:justify-between ${classePodium(posicao)}">
+                            <div class="flex items-center gap-3 min-w-0">
+                                <span class="rank-position">${posicao}</span>
+                                <div class="min-w-0">
+                                    <div class="text-white font-semibold truncate">${escaparHtml(equipe.nome)}</div>
+                                    <div class="text-xs text-gray-500 font-mono">${escaparHtml(equipe.id)}</div>
+                                </div>
                             </div>
-                            <div class="flex items-center gap-3 flex-shrink-0">
-                                <span class="nota-badge">⭐ ${nota}</span>
-                            </div>
+                            <label class="flex items-center gap-3 justify-between md:justify-end">
+                                <span class="text-sm text-gray-400">Nota</span>
+                                <input
+                                    class="nota-input"
+                                    type="text"
+                                    inputmode="decimal"
+                                    autocomplete="off"
+                                    data-id="${escaparHtml(equipe.id)}"
+                                    value="${escaparHtml(formatarNota(equipe.nota))}"
+                                    ${finalizado ? 'disabled' : ''}
+                                    aria-label="Nota da equipe ${escaparHtml(equipe.nome)}"
+                                />
+                            </label>
                         </li>
                     `;
                 });
@@ -300,78 +357,51 @@
                 container.innerHTML = html;
 
                 if (finalizado) {
-                    document.querySelectorAll('.team-card').forEach(el => el.style.cursor = 'default');
-                }
-
-                // ----- Configurar eventos de drag and drop -----
-                const list = document.getElementById('ranking-list');
-                let dragStartIndex = null;
-
-                list.addEventListener('dragstart', (e) => {
-                    if (finalizado) {
-                        e.preventDefault();
-                        return;
-                    }
-                    const li = e.target.closest('.team-card');
-                    if (!li) return;
-                    dragStartIndex = parseInt(li.dataset.ordenado, 10);
-                    e.dataTransfer.effectAllowed = 'move';
-                    e.dataTransfer.setData('text/plain', dragStartIndex);
-                    requestAnimationFrame(() => {
-                        li.classList.add('dragging');
-                    });
-                });
-
-                list.addEventListener('dragend', (e) => {
-                    const li = e.target.closest('.team-card');
-                    if (li) li.classList.remove('dragging');
-                    document.querySelectorAll('.team-card.drag-over').forEach(el => el.classList.remove('drag-over'));
-                });
-
-                list.addEventListener('dragover', (e) => {
-                    e.preventDefault();
-                    e.dataTransfer.dropEffect = 'move';
-                });
-
-                list.addEventListener('dragenter', (e) => {
-                    e.preventDefault();
-                    const targetLi = e.target.closest('.team-card');
-                    if (!targetLi) return;
-                    const targetIndex = parseInt(targetLi.dataset.ordenado, 10);
-                    if (targetIndex === dragStartIndex) return;
-                    targetLi.classList.add('drag-over');
-                });
-
-                list.addEventListener('dragleave', (e) => {
-                    e.preventDefault();
-                    const targetLi = e.target.closest('.team-card');
-                    if (targetLi) targetLi.classList.remove('drag-over');
-                });
-
-                list.addEventListener('drop', (e) => {
-                    e.preventDefault();
-                    document.querySelectorAll('.team-card.drag-over').forEach(el => el.classList.remove('drag-over'));
-                    const targetLi = e.target.closest('.team-card');
-                    if (!targetLi) return;
-                    const targetIndex = parseInt(targetLi.dataset.ordenado, 10);
-                    if (dragStartIndex === null || dragStartIndex === targetIndex) return;
-                    reordenar(dragStartIndex, targetIndex);
-                    dragStartIndex = null;
-                });
-
-                // Atualiza botão votar
-                if (finalizado) {
-                    btnVotar.textContent = '✅ Votação finalizada';
+                    btnVotar.textContent = 'Votação finalizada';
                     btnVotar.disabled = true;
                 } else {
-                    btnVotar.textContent = '🗳️ Votar';
+                    btnVotar.textContent = 'Votar';
                     btnVotar.disabled = false;
+                }
+
+                if (focoId) {
+                    const input = container.querySelector(`.nota-input[data-id="${CSS.escape(focoId)}"]`);
+                    if (input) {
+                        input.focus();
+                        input.select();
+                    }
                 }
             }
 
+            container.addEventListener('change', (event) => {
+                const input = event.target.closest('.nota-input');
+                if (!input) return;
+                atualizarNota(input.dataset.id, input.value);
+            });
+
+            container.addEventListener('keydown', (event) => {
+                const input = event.target.closest('.nota-input');
+                if (!input) return;
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                    input.blur();
+                }
+            });
+
             btnVotar.addEventListener('click', finalizarVotacao);
 
-            carregarDados();
+            obterDadosEquipes()
+                .then(data => {
+                    equipes = data;
+                    carregarVotos();
+                    construirRanking();
+                    finalizado = localStorage.getItem(STORAGE_FINALIZADO) === 'true';
+                    renderizar();
+                })
+                .catch(err => {
+                    container.innerHTML = `<div class="text-center text-red-400">Erro: ${escaparHtml(err.message)}</div>`;
+                    console.error(err);
+                });
         })();
     </script>
 </body>

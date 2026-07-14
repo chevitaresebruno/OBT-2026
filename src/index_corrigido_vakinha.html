@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IFES Campus Serra na Escola Avançada de Tecnologia da Olimpíada Brasileira de Tecnologia 2026 – Ajude nossos alunos</title>
+    <title>IFES Campus Serra na Escola Avançada de Tecnologia da Olimpíada Brasileira de TEcnologia 2026 – Ajude nossos alunos</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <style>
@@ -115,9 +115,6 @@
                 <a href="#equipes" class="btn-cta glass text-white border border-white/20 hover:bg-white/10">
                     Conheça as equipes →
                 </a>
-                <a href="equipe.html?index=0" class="btn-cta glass text-white border border-white/20 hover:bg-white/10">
-                    Votar
-                </a>
             </div>
             <div class="mt-12 flex justify-center gap-8 text-gray-400 text-sm">
                 <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-indigo-400"></span> Projetos reais</span>
@@ -134,7 +131,7 @@
                 <span class="text-indigo-400 text-sm font-semibold tracking-widest uppercase">Sobre a competição</span>
                 <h2 class="text-4xl md:text-5xl font-bold mt-2">
                     <span class="text-white">O que é a</span>
-                    <span class="gradient-text">EAT?</span>
+                    <span class="gradient-text">OBT?</span>
                 </h2>
             </div>
             <div class="grid md:grid-cols-2 gap-10 items-start">
@@ -343,18 +340,18 @@
             <div class="space-y-6">
                 <div class="glass p-6 rounded-2xl border border-white/5">
                     <h4 class="text-white font-semibold text-lg">Como posso doar?</h4>
-                    <p class="text-gray-400 mt-2">Clique em algum dos botões de ajuda/apoio ao nossos alunos e você será redirecionado para nossa página de arrecadação na Vakinha. Lá você pode escolher o valor e a forma de pagamento.</p>
+                    <p class="text-gray-400 mt-2">Clique no botão "Ajude nossos alunos" e você será redirecionado para nossa página de arrecadação (Vakinha ou outro). Lá você pode escolher o valor e a forma de pagamento.</p>
                 </div>
                 <div class="glass p-6 rounded-2xl border border-white/5">
                     <h4 class="text-white font-semibold text-lg">O dinheiro vai diretamente para os alunos?</h4>
-                    <p class="text-gray-400 mt-2">Sim! Todos os recursos arrecadados serão usados exclusivamente para custear transporte, hospedagem, alimentação e outras despesas da participação das equipes na EAT.</p>
+                    <p class="text-gray-400 mt-2">Sim! Todos os recursos arrecadados serão usados exclusivamente para custear transporte, hospedagem, alimentação e outras despesas da participação das equipes na OBT.</p>
                 </div>
                 <div class="glass p-6 rounded-2xl border border-white/5">
                     <h4 class="text-white font-semibold text-lg">Posso ajudar de outra forma?</h4>
                     <p class="text-gray-400 mt-2">Além das doações, você pode compartilhar a campanha em suas redes sociais, divulgar para empresas parceiras ou até mesmo oferecer mentoria para os alunos.</p>
                 </div>
                 <div class="glass p-6 rounded-2xl border border-white/5">
-                    <h4 class="text-white font-semibold text-lg">Quando será a Escola Avançada de Tecnologia?</h4>
+                    <h4 class="text-white font-semibold text-lg">Quando será a Escola Avançada de TEcnologia?</h4>
                     <p class="text-gray-400 mt-2">A competição acontecerá dentre os dias 28 e 31 de julho de 2026, em São José dos Campos, SP. Fique atento às nossas redes sociais para acompanhar a jornada das equipes.</p>
                 </div>
             </div>
@@ -364,7 +361,7 @@
     <!-- ========== RODAPÉ ========== -->
     <footer class="py-12 px-6 border-t border-white/10 text-center text-gray-500 text-sm">
         <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-            <span>© 2026 IFES – Campus Serra · EAT 2026</span>
+            <span>© 2026 IFES – Campus Serra · OBT 2026</span>
             <div class="flex gap-6">
                 <a href="#" class="hover:text-indigo-400 transition">Sobre</a>
                 <a href="#" class="hover:text-indigo-400 transition">Contato</a>
@@ -374,9 +371,8 @@
     </footer>
 
     <!-- ========== SCRIPT PARA CARREGAR OS CARDS (COM ODS) ========== -->
-    <script type="module">
-        import {fetch_data_json} from "./fetch_data.js";
-
+    <script src="data.js"></script>
+    <script>
         (function() {
             const container = document.getElementById('cards-container');
             const loading = document.getElementById('loading');
@@ -420,7 +416,11 @@
                     return Promise.resolve(dadosLocais);
                 }
 
-                return fetch_data_json()
+                return fetch('data.json')
+                    .then(res => {
+                        if (!res.ok) throw new Error('Erro ao carregar dados');
+                        return res.json();
+                    })
                     .catch(err => {
                         if (dadosLocais) {
                             console.warn('Usando dados locais de data.js como fallback.', err);

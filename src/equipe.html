@@ -243,7 +243,9 @@
         </div>
     </div>
 
-    <script>
+    <script type="module">
+        import {fetch_data_json} from "./fetch_data.js";
+
         (function() {
             const urlParams = new URLSearchParams(window.location.search);
             let index = parseInt(urlParams.get('index'), 10);
@@ -437,6 +439,14 @@
 
             // ----- FIM LÓGICA SLIDER -----
 
+            function normalizarUrl(url) {
+                if (!url) return '';
+                const valor = String(url).trim();
+                if (/^(https?:|mailto:|tel:|#|\/|\.{1,2}\/)/i.test(valor)) return valor;
+                if (/^(assets\/|data\.json)/i.test(valor)) return valor;
+                return `https://${valor}`;
+            }
+
             function renderEquipe(pos) {
                 if (!equipes.length || pos < 0 || pos >= equipes.length) {
                     container.innerHTML = '<div class="text-center text-red-400">Equipe não encontrada.</div>';
@@ -451,7 +461,7 @@
                 if (eq.membros_equipe && eq.membros_equipe.length) {
                     membrosHTML = `
                         <div class="mt-10">
-                            <h3 class="text-xl font-semibold text-white/80 text-center mb-6">👥 Equipe</h3>
+                            <h3 class="text-xl font-semibold text-white/80 text-center mb-6">Equipe ${eq.nome_equipe}</h3>
                             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                                 ${eq.membros_equipe.map(m => `
                                     <div class="member-card rounded-xl p-4 text-center">
@@ -486,12 +496,32 @@
                 }
 
                 const odsHtml = renderODS(eq.ods || []);
+                const botoesLinksHTML = `
+                    ${eq.url_prototipo ? `
+                        <a href="${normalizarUrl(eq.url_prototipo)}" target="_blank" rel="noopener noreferrer"
+                        class="inline-block mr-2 mt-6 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-8 py-3 rounded-xl transition shadow-lg">
+                            Acessar Protótipo
+                        </a>
+                    ` : ''}
+                    ${eq.url_app ? `
+                        <a href="${normalizarUrl(eq.url_app)}" target="_blank" rel="noopener noreferrer"
+                        class="inline-block mr-2 mt-6 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-8 py-3 rounded-xl transition shadow-lg">
+                            Acessar App
+                        </a>
+                    ` : ''}
+                    ${eq.url_banner ? `
+                        <a href="${normalizarUrl(eq.url_banner)}" target="_blank" rel="noopener noreferrer"
+                        class="inline-block mt-6 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-8 py-3 rounded-xl transition shadow-lg">
+                            Acessar Banner
+                        </a>
+                    ` : ''}
+                `;
 
                 container.innerHTML = `
                     <div class="text-center">
-                        <img src="${eq.url_imagem_equipe}" alt="${eq.nome_equipe}" 
+                        <img src="${eq.url_imagem_logo}" alt="${eq.nome_app}" 
                             class="w-36 h-36 object-cover mx-auto rounded-full border-2 border-indigo-400/40 shadow-xl" />
-                        <h1 class="text-3xl md:text-4xl font-extrabold text-white mt-4">${eq.nome_equipe}</h1>
+                        <h1 class="text-3xl md:text-4xl font-extrabold text-white mt-4">${eq.nome_app}</h1>
                         <p class="text-gray-300 mt-3 text-base md:text-lg max-w-2xl mx-auto">${eq.descricao}</p>
                         
                         <div class="flex flex-wrap justify-center gap-2 mt-4">
@@ -501,12 +531,9 @@
                         <div class="mt-6 rounded-xl overflow-hidden shadow-2xl border border-white/10">
                             <iframe class="w-full aspect-video" src="${eq.url_youtube}" 
                                     frameborder="0" allowfullscreen 
-                                    title="Vídeo da equipe ${eq.nome_equipe}"></iframe>
+                                    title="Vídeo da equipe ${eq.nome_app}"></iframe>
                         </div>
-                        <a href="${eq.url_app}" target="_blank" 
-                        class="inline-block mt-6 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-8 py-3 rounded-xl transition shadow-lg">
-                            📲 Acessar App
-                        </a>
+                        ${botoesLinksHTML}
                         ${membrosHTML}
                     </div>
                 `;
@@ -522,12 +549,25 @@
                 atualizarSlider();
             }
 
+            function obterDadosEquipes() {
+                const dadosLocais = Array.isArray(window.EQUIPES_DATA) ? window.EQUIPES_DATA : null;
+
+                if (window.location.protocol === 'file:' && dadosLocais) {
+                    return Promise.resolve(dadosLocais);
+                }
+
+                return fetch_data_json()
+                    .catch(err => {
+                        if (dadosLocais) {
+                            console.warn('Usando dados locais de data.js como fallback.', err);
+                            return dadosLocais;
+                        }
+                        throw err;
+                    });
+            }
+
             function carregarDados() {
-                fetch('data.json')
-                    .then(res => {
-                        if (!res.ok) throw new Error('Falha no fetch');
-                        return res.json();
-                    })
+                obterDadosEquipes()
                     .then(data => {
                         equipes = data;
                         if (index >= equipes.length) index = equipes.length - 1;
