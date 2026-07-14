@@ -1,54 +1,393 @@
 [
   {
-    "nome_equipe": "Tech Titans",
-    "descricao": "Aplicativo de gestão de tarefas com inteligência artificial para otimizar a produtividade de equipes remotas.",
-    "url_imagem_equipe": "https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?w=150&h=150&fit=crop&crop=center",
-    "url_youtube": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    "url_app": "https://play.google.com/store/apps/details?id=com.example.techtitans",
+    "id": "aladins",
+    "nome_equipe": "Aladins",
+    "nome_app": "Aladins",
+    "descricao": "Aplicativo educacional voltado para estudantes que se preparam para concursos, olimpíadas de conhecimento, processos seletivos e programas de bolsas. A proposta reúne oportunidades acadêmicas, cronogramas, materiais de apoio e ferramentas de estudo com apoio de inteligência artificial.",
+    "url_imagem_equipe": "OBT_2026_assets/OBT 2026/Aladins/Logo.jpg",
+    "url_banner": "https://drive.google.com/file/d/1OwBseonqnFvDHcePQNhDSI0rnxIsllS9/view",
+    "url_youtube": "https://www.youtube.com/embed/4fiunHvymwM",
+    "url_app": "https://drive.google.com/drive/folders/1qUkWHRQCFY2uulefrjgIhFoS6HVi-5ym?usp=sharing",
+    "url_apk_local": null,
+    "botao_votacao": { "texto": "Votar", "ativo": true },
     "membros_equipe": [
-      { "nome": "Ana Silva", "imagem": "https://randomuser.me/api/portraits/women/44.jpg", "funcao": "Desenvolvedora Full Stack" },
-      { "nome": "Carlos Santos", "imagem": "https://randomuser.me/api/portraits/men/32.jpg", "funcao": "Engenheiro de IA" },
-      { "nome": "Mariana Costa", "imagem": "https://randomuser.me/api/portraits/women/68.jpg", "funcao": "UX/UI Designer" }
+      { "nome": "Alex Sandro Rossmann Cruz do Nascimento", "imagem": "OBT_2026_assets/OBT 2026/Aladins/Foto dos membros/Alex Sandro Rossmann Cruz do Nascimento_.jpg", "funcao": "Líder da equipe, organização da documentação, apoio na prova e edição do vídeo." },
+      { "nome": "Luiz Felipe Silva de Freitas", "imagem": "OBT_2026_assets/OBT 2026/Aladins/Foto dos membros/Luiz Felipe Silva de Freitas.jpg", "funcao": "Desenvolvimento do UX/UI e protótipo Figma, com auxílio no desenvolvimento do aplicativo." },
+      { "nome": "João Victor Pereira Santos", "imagem": "OBT_2026_assets/OBT 2026/Aladins/Foto dos membros/João Victor Pereira Santos_.jpg", "funcao": "Prova, desenvolvimento do aplicativo e suporte na organização do conteúdo e da documentação." },
+      { "nome": "Krystian de Melo Muniz", "imagem": "OBT_2026_assets/OBT 2026/Aladins/Foto dos membros/Krystian de Melo Muniz.jpg", "funcao": "Produção do vídeo, pesquisa e auxílio nas ideias para o protótipo e aplicativo." },
+      { "nome": "Raul Rezende Gonçalves", "imagem": "OBT_2026_assets/OBT 2026/Aladins/Foto dos membros/Raul Rezende Gonçalves_.jpg", "funcao": "Produção do vídeo, suporte no desenvolvimento da ideia e pesquisa de validação." },
+      { "nome": "Lucas Guimarães de Lima Costa", "imagem": "OBT_2026_assets/OBT 2026/Aladins/Foto dos membros/Lucas Guimarães de Lima Costa.jpg", "funcao": "Prova, pesquisa, suporte no desenvolvimento da ideia e validação do projeto." }
     ],
-    "ods": [4, 9, 17]
+    "ods": [4, 10]
   },
   {
-    "nome_equipe": "InovaKids",
-    "descricao": "Plataforma educativa com jogos interativos para ensinar programação a crianças de 8 a 12 anos.",
-    "url_imagem_equipe": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=150&h=150&fit=crop&crop=center",
-    "url_youtube": "https://www.youtube.com/embed/9bZkp7q19f0",
-    "url_app": "https://apps.apple.com/br/app/inovakids/id123456789",
+    "id": "aquiferas",
+    "nome_equipe": "AquíFeras",
+    "nome_app": "KnoWaters",
+    "descricao": "Aplicativo conectado a sensores de monitoramento do nível da água para prevenção de enchentes. A solução oferece alertas, mapa colaborativo de áreas de risco, pontos seguros e participação comunitária mesmo para usuários sem sensor próprio.",
+    "url_imagem_equipe": "OBT_2026_embedded_images/AquíFeras/EQUIPE AQUÍFERAS - Informações/image_02.jpeg",
+    "url_banner": "https://drive.google.com/file/d/1D9Cxrk6Na8puOzXLU3uhLTJQO0l7y8Aq/view?usp=drivesdk",
+    "url_youtube": "https://www.youtube.com/embed/mqNUXnNnfpM",
+    "url_app": "https://drive.google.com/drive/folders/12BuqwARLuI-4qJdaEuvbSvtS0ilhe6Zs?usp=drive_link",
+    "url_apk_local": null,
+    "botao_votacao": { "texto": "Votar", "ativo": true },
     "membros_equipe": [
-      { "nome": "João Pedro", "imagem": "https://randomuser.me/api/portraits/men/45.jpg", "funcao": "Pedagogo e Game Designer" },
-      { "nome": "Fernanda Lima", "imagem": "https://randomuser.me/api/portraits/women/12.jpg", "funcao": "Desenvolvedora Front-end" },
-      { "nome": "Rafael Souza", "imagem": "https://randomuser.me/api/portraits/men/22.jpg", "funcao": "Especialista em Gamificação" }
+      { "nome": "Sophia Morais", "imagem": "OBT_2026_assets/OBT 2026/AquíFeras/Sophia-Foto.jpg", "funcao": "Equipe social; desenvolveu a ideia do app, participou da montagem do sensor e do design no Figma e MIT App Inventor." },
+      { "nome": "Francisco Leal Alves", "imagem": "OBT_2026_assets/OBT 2026/AquíFeras/Francisco-Foto.png", "funcao": "Equipe de Matemática; atuou nas provas e no design do protótipo." },
+      { "nome": "Juliana Brommonschenkel Corrêa", "imagem": "OBT_2026_assets/OBT 2026/AquíFeras/Juliana-Foto.jpg", "funcao": "Equipe de Matemática; atuou nas provas, diagramas, protótipo Figma e implementação no MIT App Inventor." },
+      { "nome": "Eduardo Zardo Soares", "imagem": "OBT_2026_assets/OBT 2026/AquíFeras/Eduardo-Foto.png", "funcao": "Equipe de Matemática; atuou nas provas, alimentação de dados do MIT App Inventor e protótipo Figma." },
+      { "nome": "Murilo Gomes Carvalho Góes", "imagem": "OBT_2026_assets/OBT 2026/AquíFeras/Murilo-Foto.jpg", "funcao": "Equipe social; fundador do projeto, participou da criação do protótipo e do desenvolvimento no MIT App Inventor." },
+      { "nome": "Lorran Calazans Meneguelli", "imagem": "OBT_2026_assets/OBT 2026/AquíFeras/Lorran-Foto.jpg", "funcao": "Equipe social; participou do protótipo, dos ajustes do sensor físico e da integração com o aplicativo." }
     ],
-    "ods": [4, 10, 16]
+    "ods": [11, 13]
   },
   {
-    "nome_equipe": "Green Future",
-    "descricao": "App que monitora o consumo de energia em residências e sugere ações para redução da pegada de carbono.",
-    "url_imagem_equipe": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=150&h=150&fit=crop&crop=center",
-    "url_youtube": "https://www.youtube.com/embed/3JZ_D3ELwOQ",
-    "url_app": "https://greenfuture.com.br/app",
+    "id": "as-winx",
+    "nome_equipe": "As Winx",
+    "nome_app": "PorElas",
+    "descricao": "Aplicativo voltado à segurança das mulheres, com denúncia, mapeamento de segurança e compartilhamento de trajeto para levar mais informação, proteção e apoio em situações de risco.",
+    "url_imagem_equipe": "OBT_2026_assets/OBT 2026/As Winx/IMG_Logo.PNG",
+    "url_banner": "OBT_2026_assets/OBT 2026/As Winx/BannerAsWinx.pdf",
+    "url_youtube": "https://www.youtube.com/embed/QE9P6qH3Wpc",
+    "url_app": "https://drive.google.com/drive/folders/1NTvr-fKKzr6jfx0ZlDJubYzJZTTKDh6p?usp=sharing",
+    "url_apk_local": null,
+    "botao_votacao": { "texto": "Votar", "ativo": true },
     "membros_equipe": [
-      { "nome": "Beatriz Oliveira", "imagem": "https://randomuser.me/api/portraits/women/90.jpg", "funcao": "Cientista de Dados" },
-      { "nome": "Lucas Mendes", "imagem": "https://randomuser.me/api/portraits/men/75.jpg", "funcao": "Desenvolvedor IoT" },
-      { "nome": "Camila Rocha", "imagem": "https://randomuser.me/api/portraits/women/33.jpg", "funcao": "Designer de Interfaces" }
+      { "nome": "Amanda Paiva", "imagem": "OBT_2026_assets/OBT 2026/As Winx/fotos individuais/IMG_Amanda.jpg", "funcao": "Apoio na prova e desenvolvimento do app no Figma e MIT App Inventor." },
+      { "nome": "Ana Beatriz Lopes", "imagem": "OBT_2026_assets/OBT 2026/As Winx/fotos individuais/IMG_AnaBeatriz.PNG", "funcao": "Apoio na idealização e edição do vídeo." },
+      { "nome": "Ana Carolina Brunetti", "imagem": "OBT_2026_assets/OBT 2026/As Winx/fotos individuais/IMG_AnaCarolina.PNG", "funcao": "Apoio na prova e desenvolvimento do app no Figma e MIT App Inventor." },
+      { "nome": "Eliza Karyn", "imagem": "OBT_2026_assets/OBT 2026/As Winx/fotos individuais/IMG_Eliza.jpg", "funcao": "Apoio na prova e desenvolvimento do app no Figma e MIT App Inventor." },
+      { "nome": "Thalita Ferreira", "imagem": "OBT_2026_assets/OBT 2026/As Winx/fotos individuais/IMG_Thalita.PNG", "funcao": "Apoio na idealização e edição do vídeo." },
+      { "nome": "Valentina Sobral", "imagem": "OBT_2026_assets/OBT 2026/As Winx/fotos individuais/IMG_Valentina.jpg", "funcao": "Apoio na idealização, edição do vídeo e desenvolvimento do app no Figma e MIT App Inventor." }
     ],
-    "ods": [7, 11, 13]
+    "ods": [5, 10, 16]
   },
   {
-    "nome_equipe": "Saúde+",
-    "descricao": "Sistema de agendamento de consultas e lembretes de medicamentos, integrado com prontuário eletrônico.",
-    "url_imagem_equipe": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=150&h=150&fit=crop&crop=center",
-    "url_youtube": "https://www.youtube.com/embed/5qap5aO4i9A",
-    "url_app": "https://saudemais.com/download",
+    "id": "atenas-tech",
+    "nome_equipe": "Atenas Tech",
+    "nome_app": "NeuroApoio",
+    "descricao": "Plataforma digital para centralizar o acompanhamento de saúde de pacientes com tumor cerebral, facilitando a comunicação entre pacientes, cuidadores e equipes médicas e organizando o histórico clínico.",
+    "url_imagem_equipe": "OBT_2026_assets/OBT 2026/Atenas Tech/EQUIPE ATENAS TECH.png",
+    "url_banner": "https://drive.google.com/file/d/1BtxSRxX2b69yCe0A0JtVlWgm4o-gpldi/view?usp=drivesdk",
+    "url_youtube": "https://www.youtube.com/embed/LNyR6eoeQNo",
+    "url_app": "https://vocal-pasca-c9e1bc.netlify.app",
+    "url_apk_local": "OBT_2026_assets/OBT 2026/Atenas Tech/NeuroApoio.apk",
+    "botao_votacao": { "texto": "Votar", "ativo": true },
     "membros_equipe": [
-      { "nome": "Dr. Ricardo Almeida", "imagem": "https://randomuser.me/api/portraits/men/50.jpg", "funcao": "Médico e Product Owner" },
-      { "nome": "Tatiana Nunes", "imagem": "https://randomuser.me/api/portraits/women/17.jpg", "funcao": "Desenvolvedora Back-end" },
-      { "nome": "Felipe Barros", "imagem": "https://randomuser.me/api/portraits/men/88.jpg", "funcao": "Especialista em Segurança" }
+      { "nome": "Larah da Silva Barbosa", "imagem": "OBT_2026_embedded_images/Atenas Tech/Equipe Atenas Tech/image_03.png", "funcao": "Capitã de equipe, desenvolvedora principal, editora, gravação e social." },
+      { "nome": "Maria Rita Mendes Nunes", "imagem": "OBT_2026_embedded_images/Atenas Tech/Equipe Atenas Tech/image_04.png", "funcao": "Desenvolvedora secundária, idealizadora do app e equipe de Matemática." },
+      { "nome": "Sophia Gomes Scardua", "imagem": "OBT_2026_embedded_images/Atenas Tech/Equipe Atenas Tech/image_05.png", "funcao": "Desenvolvimento, design e equipe de Matemática." }
     ],
-    "ods": [3, 5, 10]
+    "ods": [3, 10, 17]
+  },
+  {
+    "id": "betasquad",
+    "nome_equipe": "betaSquad",
+    "nome_app": "VigiaGlic",
+    "descricao": "Aplicativo móvel de apoio educacional e organizacional para pessoas com diabetes, pré-diabetes e responsáveis. Reúne registros de glicemia, diário alimentar, medicamentos, agenda, relatórios, leitor de código de barras e assistente educacional.",
+    "url_imagem_equipe": "OBT_2026_assets/OBT 2026/betaSquad/logo-pura-sem-gradiente.png",
+    "url_banner": "OBT_2026_assets/OBT 2026/betaSquad/banner_betaSquad.pdf",
+    "url_youtube": "https://www.youtube.com/embed/1eh13ogPGOk",
+    "url_app": "OBT_2026_assets/OBT 2026/betaSquad/VigiaGlic.apk",
+    "url_apk_local": "OBT_2026_assets/OBT 2026/betaSquad/VigiaGlic.apk",
+    "botao_votacao": { "texto": "Votar", "ativo": true },
+    "membros_equipe": [
+      { "nome": "Wallace Costa", "imagem": "OBT_2026_assets/OBT 2026/betaSquad/fotoWallaceCosta.jpg", "funcao": "Equipe social, produção do vídeo, protótipo e desenvolvimento do aplicativo ao lado de Juan." },
+      { "nome": "Juan", "imagem": "OBT_2026_assets/OBT 2026/betaSquad/fotoJuan.jpg", "funcao": "Equipe social, produção do vídeo, protótipo e desenvolvimento das telas, funcionalidades, integrações e testes do aplicativo." },
+      { "nome": "Henrique", "imagem": "OBT_2026_assets/OBT 2026/betaSquad/fotoHenrique.jpg", "funcao": "Equipe matemática/técnica, vídeo social e colaboração no protótipo." },
+      { "nome": "Hélio", "imagem": "OBT_2026_assets/OBT 2026/betaSquad/fotoHelio.jpeg", "funcao": "Equipe matemática/técnica e colaboração na construção do protótipo do VigiaGlic." },
+      { "nome": "João Dadalto", "imagem": "OBT_2026_assets/OBT 2026/betaSquad/fotoJoaoDadalto.jpg", "funcao": "Equipe matemática/técnica e colaboração na elaboração do protótipo do aplicativo." },
+      { "nome": "Matheus", "imagem": null, "funcao": "Participação em reuniões da equipe." }
+    ],
+    "ods": [3, 12]
+  },
+  {
+    "id": "compilando-ideias",
+    "nome_equipe": "Compilando Ideias",
+    "nome_app": "Compilando Ideias",
+    "descricao": "Aplicativo educacional para crianças do Ensino Fundamental I que ensina matemática e educação financeira por atividades interativas, gamificação, simulações do cotidiano e videoaulas, com acompanhamento para professores e responsáveis.",
+    "url_imagem_equipe": "OBT_2026_embedded_images/Compilando Ideias/Sobre nossa equipe/image_01.png",
+    "url_banner": "https://canva.link/y51bshfxpczm3fp",
+    "url_youtube": "https://www.youtube.com/embed/c67OY9MMEpQ",
+    "url_app": "https://drive.google.com/drive/folders/1fUB1SxqMbeYtgqz9VFoPOCRMZNexcHP0",
+    "url_apk_local": "OBT_2026_assets/OBT 2026/Compilando Ideias/peq_eq.apk",
+    "botao_votacao": { "texto": "Votar", "ativo": true },
+    "membros_equipe": [
+      { "nome": "Thainini Rodrigues Sabino", "imagem": "OBT_2026_embedded_images/Compilando Ideias/Sobre nossa equipe/image_02.png", "funcao": "Social" },
+      { "nome": "Lavinia Lima Rodrigues da Silva", "imagem": "OBT_2026_embedded_images/Compilando Ideias/Sobre nossa equipe/image_03.png", "funcao": "Matemática" },
+      { "nome": "Kayla Wencionek Teixeira", "imagem": "OBT_2026_embedded_images/Compilando Ideias/Sobre nossa equipe/image_04.png", "funcao": "Social" },
+      { "nome": "Ana Julia Santos Siqueira", "imagem": "OBT_2026_embedded_images/Compilando Ideias/Sobre nossa equipe/image_05.png", "funcao": "Social" },
+      { "nome": "Ana Beatriz Borges Julião", "imagem": "OBT_2026_embedded_images/Compilando Ideias/Sobre nossa equipe/image_06.png", "funcao": "Matemática" },
+      { "nome": "Carlos Eduardo Ferrari Martins", "imagem": "OBT_2026_embedded_images/Compilando Ideias/Sobre nossa equipe/image_07.png", "funcao": "Matemática" }
+    ],
+    "ods": [4, 10, 12]
+  },
+  {
+    "id": "jangss",
+    "nome_equipe": "Jangss",
+    "nome_app": "WearWise",
+    "descricao": "Aplicativo para incentivar consumo de moda consciente e sustentável, com catálogo digital do guarda-roupa, sugestões de combinações, rede de troca de peças, mapeamento de brechós, metas de sustentabilidade e ranking entre amigos.",
+    "url_imagem_equipe": "OBT_2026_assets/OBT 2026/Jangss/WearWise_logo_logo.png",
+    "url_banner": "OBT_2026_assets/OBT 2026/Jangss/Banner_WearWise.pdf",
+    "url_youtube": "https://www.youtube.com/embed/9GXdy7CdlmE",
+    "url_app": "https://drive.google.com/drive/folders/1vn7t3WDvjkZ7NWn4B8Bf_JOdAA4SnWfh",
+    "url_apk_local": null,
+    "botao_votacao": { "texto": "Votar", "ativo": true },
+    "membros_equipe": [
+      { "nome": "Nicolas Gabriel dos Santos Vieira", "imagem": "OBT_2026_assets/OBT 2026/Jangss/Fotos_Individuais/Nicolas Gabriel Dos Santos Vieira_.jpg", "funcao": "Capitão da equipe, responsável pelo desenvolvimento do aplicativo e pelo design UX/UI." },
+      { "nome": "Sofia do Carmo Dutra", "imagem": "OBT_2026_assets/OBT 2026/Jangss/Fotos_Individuais/Sofia do Carmo Dutra.jpg", "funcao": "Produção e gravação do vídeo, além de apoio na prova." },
+      { "nome": "João Pedro Ribeiro", "imagem": "OBT_2026_assets/OBT 2026/Jangss/Fotos_Individuais/João Pedro Ribeiro.jpg", "funcao": "Pesquisa, validação das ideias e apoio na prova." },
+      { "nome": "Serena Kuster Silva", "imagem": "OBT_2026_assets/OBT 2026/Jangss/Fotos_Individuais/Serena Kuster Silva.jpg", "funcao": "Produção do vídeo, organização do conteúdo e apoio na prova." },
+      { "nome": "Geziel Nascimento Ferreira Filho", "imagem": "OBT_2026_assets/OBT 2026/Jangss/Fotos_Individuais/Geziel Nascimento Ferreira Filho_.jpg", "funcao": "Apoio ao desenvolvimento, testes do aplicativo e suporte técnico." },
+      { "nome": "Ângelo Trajano Rodrigues Ribeiro", "imagem": "OBT_2026_assets/OBT 2026/Jangss/Fotos_Individuais/Ângelo Trajano Rodrigues Ribeiro_.jpg", "funcao": "Produção do vídeo, apoio técnico pontual e participação na prova." }
+    ],
+    "ods": [8, 12, 13]
+  },
+  {
+    "id": "jovens-titas",
+    "nome_equipe": "Jovens Titãs",
+    "nome_app": "Memória Viva",
+    "descricao": "Plataforma digital interativa para que comunidades historicamente excluídas registrem suas trajetórias, mapeiem pontos culturais e organizem marcos, línguas e tradições em uma linha do tempo dinâmica.",
+    "url_imagem_equipe": "OBT_2026_pdf_images/Jovens TItãs/DESCRIÇÃO JOVENS TITÃS/p02_01_X10.png",
+    "url_banner": "https://drive.google.com/file/d/1aXW43-ueQ4-Cypmu8D6_Gym7_BNat5NK/view?usp=drivesdk",
+    "url_youtube": "https://www.youtube.com/embed/Xxa3KAPCnBA",
+    "url_app": "https://drive.google.com/file/d/1lZP_NETM17N5VAnLtY5RBMx4aDRMR9hV/view?usp=drivesdk",
+    "url_apk_local": "OBT_2026_assets/OBT 2026/Jovens TItãs/memoriaViva (13).apk",
+    "botao_votacao": { "texto": "Votar", "ativo": true },
+    "membros_equipe": [
+      { "nome": "Arthur Loureiro Lima", "imagem": "OBT_2026_pdf_images/Jovens TItãs/DESCRIÇÃO JOVENS TITÃS/p03_01_X18.png", "funcao": "Equipe de Matemática" },
+      { "nome": "Joice Bento Calixto", "imagem": "OBT_2026_pdf_images/Jovens TItãs/DESCRIÇÃO JOVENS TITÃS/p03_02_X19.png", "funcao": "Equipe Social" },
+      { "nome": "Katarina Veljovic", "imagem": "OBT_2026_pdf_images/Jovens TItãs/DESCRIÇÃO JOVENS TITÃS/p04_01_X22.png", "funcao": "Equipe de Matemática" },
+      { "nome": "Kauã Alexandre Bernardes", "imagem": "OBT_2026_pdf_images/Jovens TItãs/DESCRIÇÃO JOVENS TITÃS/p04_02_X23.png", "funcao": "Equipe Social" },
+      { "nome": "Lara Walcher de Andrade", "imagem": "OBT_2026_pdf_images/Jovens TItãs/DESCRIÇÃO JOVENS TITÃS/p05_01_X26.png", "funcao": "Equipe Social" },
+      { "nome": "Victor Ramos Dessaune", "imagem": "OBT_2026_pdf_images/Jovens TItãs/DESCRIÇÃO JOVENS TITÃS/p05_02_X27.png", "funcao": "Equipe de Matemática" }
+    ],
+    "ods": [11]
+  },
+  {
+    "id": "kairos-tech",
+    "nome_equipe": "Kairos Tech",
+    "nome_app": "Projeta",
+    "descricao": "Aplicativo que conecta jovens a empresas confiáveis e oferece acesso a cursos profissionalizantes, promovendo qualificação, inclusão e oportunidades de emprego digno.",
+    "url_imagem_equipe": "OBT_2026_pdf_pages/kairos-1.png",
+    "url_banner": "OBT_2026_assets/OBT 2026/Kairos Tech/Banner_Projeta_HD.pdf",
+    "url_youtube": "https://www.youtube.com/embed/8Mk2FzEc7Dw",
+    "url_app": "OBT_2026_assets/OBT 2026/Kairos Tech/projeta.apk",
+    "url_apk_local": "OBT_2026_assets/OBT 2026/Kairos Tech/projeta.apk",
+    "botao_votacao": { "texto": "Votar", "ativo": true },
+    "membros_equipe": [
+      { "nome": "Nassom Lacôrt Oliveira", "imagem": "OBT_2026_embedded_images/Kairos Tech/Nassom Lacôrt Oliveira/image_01.jpg", "funcao": "Equipe de Matemática; programador do app." },
+      { "nome": "Sofia Ramaldes Mariani", "imagem": "OBT_2026_embedded_images/Kairos Tech/Sofia Ramaldes Mariani/image_01.jpg", "funcao": "Equipe social; produtora do vídeo." },
+      { "nome": "Maria Clara Peterle de Souza", "imagem": "OBT_2026_embedded_images/Kairos Tech/Maria Clara Peterle de Souza/image_01.jpg", "funcao": "Equipe de Matemática; desenvolvedora do layout." },
+      { "nome": "Francesco Reis de Carli", "imagem": "OBT_2026_embedded_images/Kairos Tech/Francesco Reis de Carli/image_01.jpg", "funcao": "Equipe de Matemática; programador." },
+      { "nome": "Eloah Aguiar Oliveira", "imagem": null, "funcao": "Membro citado no banner; função não informada no material extraído." }
+    ],
+    "ods": [8]
+  },
+  {
+    "id": "loucos-e-sonhadores-3",
+    "nome_equipe": "Loucos e Sonhadores 3: O Ato Final",
+    "nome_app": "ConsultaPronta",
+    "descricao": "Plataforma digital que organiza informações de saúde do paciente antes da consulta, gera relatórios claros para profissionais, apoia pré-triagem, histórico clínico, IA preditiva, direcionamento a hospitais e lembretes de cuidados.",
+    "url_imagem_equipe": "OBT_2026_assets/OBT 2026/Loucos e Sonhadores 3_ O Ato Final/FotoEquipe.jpeg",
+    "url_banner": "OBT_2026_assets/OBT 2026/Loucos e Sonhadores 3_ O Ato Final/BANNER.pdf",
+    "url_youtube": "https://www.youtube.com/embed/1JWZyaY_N3o",
+    "url_app": "OBT_2026_assets/OBT 2026/Loucos e Sonhadores 3_ O Ato Final/ConsultaPronta.apk",
+    "url_apk_local": "OBT_2026_assets/OBT 2026/Loucos e Sonhadores 3_ O Ato Final/ConsultaPronta.apk",
+    "botao_votacao": { "texto": "Votar", "ativo": true },
+    "membros_equipe": [
+      { "nome": "Gabriel Carlos Muniz Vago", "imagem": "OBT_2026_pdf_images/Loucos e Sonhadores 3_ O Ato Final/Equipe - Loucos e Sonhadores/p01_04_Im41.jpg", "funcao": "Capitão de equipe, idealizador, roteirista e designer." },
+      { "nome": "Rafael Cabral Lopes", "imagem": "OBT_2026_pdf_images/Loucos e Sonhadores 3_ O Ato Final/Equipe - Loucos e Sonhadores/p01_03_Im39.jpg", "funcao": "Desenvolvedor principal, editor e gravação." },
+      { "nome": "Ian Caliel Matos Cabral", "imagem": "OBT_2026_pdf_images/Loucos e Sonhadores 3_ O Ato Final/Equipe - Loucos e Sonhadores/p01_05_Im92.jpg", "funcao": "Segundo desenvolvedor e gravação." },
+      { "nome": "Vitor Felberg Barcelos", "imagem": "OBT_2026_pdf_images/Loucos e Sonhadores 3_ O Ato Final/Equipe - Loucos e Sonhadores/p01_06_Im94.jpg", "funcao": "Prova técnica e gravação." },
+      { "nome": "Vitória Cruz de Aguiar", "imagem": "OBT_2026_pdf_images/Loucos e Sonhadores 3_ O Ato Final/Equipe - Loucos e Sonhadores/p01_07_Im96.jpg", "funcao": "Prova técnica e desenvolvimento." },
+      { "nome": "Matheus Policário Amorim", "imagem": "OBT_2026_pdf_images/Loucos e Sonhadores 3_ O Ato Final/Equipe - Loucos e Sonhadores/p01_01_Im134.jpg", "funcao": "Prova técnica." },
+      { "nome": "Alessandra Aguiar Vilarinho", "imagem": "OBT_2026_pdf_images/Loucos e Sonhadores 3_ O Ato Final/Equipe - Loucos e Sonhadores/p01_02_Im136.jpg", "funcao": "Professora orientadora." }
+    ],
+    "ods": [3, 9, 10]
+  },
+  {
+    "id": "mecatech",
+    "nome_equipe": "Mecatech",
+    "nome_app": "PetCare",
+    "descricao": "Aplicativo para promover bem-estar e proteção de animais domésticos, reunindo localização de clínicas, emergências, assistente inteligente, cadastro dos pets, vacinação, calendário de cuidados e mural de animais perdidos e encontrados.",
+    "url_imagem_equipe": "OBT_2026_assets/OBT 2026/Mecatech/LOGO PetCare.jpg",
+    "url_banner": "https://drive.google.com/file/d/14h1CcnniOA42GH0nuewray3VAgxRAhj6/view?usp=s",
+    "url_youtube": "https://www.youtube.com/embed/DSnuicoDqTM",
+    "url_app": "https://drive.google.com/file/d/1gNUzNdeb_uzykJjqYi86eqiN2TzTOWgo/view?usp=sharing",
+    "url_apk_local": "OBT_2026_assets/OBT 2026/Mecatech/PetCare.apk",
+    "botao_votacao": { "texto": "Votar", "ativo": true },
+    "membros_equipe": [
+      { "nome": "Pedro Santos Borges", "imagem": "OBT_2026_pdf_images/Mecatech/Equipe Mecatech - PetCare/p03_01_X10.jpg", "funcao": "Capitão, equipe social, articulação, ideia, roteiro, vídeo, protótipo Figma, banner e criação do aplicativo." },
+      { "nome": "Inácio Queiroz Bergo Zangirolami", "imagem": "OBT_2026_pdf_images/Mecatech/Equipe Mecatech - PetCare/p03_02_X12.jpg", "funcao": "Equipe social, articulação, desenvolvimento da ideia, protótipo Figma, criação principal do aplicativo e integração do banco de dados." },
+      { "nome": "Maria Clara de Moura e Silva Barcelos", "imagem": "OBT_2026_pdf_images/Mecatech/Equipe Mecatech - PetCare/p04_01_X15.png", "funcao": "Equipe social, demandas sociais, discursos do vídeo, tradução para LIBRAS e experimentação do aplicativo." },
+      { "nome": "Daniel Bromonschenkel Barros", "imagem": "OBT_2026_pdf_images/Mecatech/Equipe Mecatech - PetCare/p04_02_X16.jpg", "funcao": "Equipe de Matemática; demandas e resolução de problemas matemáticos." },
+      { "nome": "Rian Dezan dos Santos", "imagem": "OBT_2026_pdf_images/Mecatech/Equipe Mecatech - PetCare/p05_01_X19.jpg", "funcao": "Equipe de Matemática; demandas e resolução de problemas matemáticos." },
+      { "nome": "Enzo Garuzzi Lempke", "imagem": "OBT_2026_pdf_images/Mecatech/Equipe Mecatech - PetCare/p05_02_X20.jpg", "funcao": "Equipe de Matemática; demandas e resolução de problemas matemáticos." }
+    ],
+    "ods": [15]
+  },
+  {
+    "id": "nirvana",
+    "nome_equipe": "Nirvana",
+    "nome_app": "Conecta+",
+    "descricao": "Solução com inteligência artificial para orientar usuários em tarefas do celular por comando de voz ou tutoriais, ajudando idosos e pessoas com pouca familiaridade tecnológica a ganhar autonomia digital.",
+    "url_imagem_equipe": "OBT_2026_assets/OBT 2026/Nirvana/Ícone_ConectaMais.jpg",
+    "url_banner": "https://drive.google.com/file/d/1fjzWSmuLtva7rYD4EuctJO8Gbh_y7RL7/view?usp=sharing",
+    "url_youtube": "https://www.youtube.com/embed/5sv-1MbBoCU",
+    "url_app": "OBT_2026_assets/OBT 2026/Nirvana/ConectaMais1.apk",
+    "url_apk_local": "OBT_2026_assets/OBT 2026/Nirvana/ConectaMais1.apk",
+    "botao_votacao": { "texto": "Votar", "ativo": true },
+    "membros_equipe": [
+      { "nome": "Andriy Gabriel Magnago Polastrelli", "imagem": "OBT_2026_embedded_images/Nirvana/Sobre o projeto Conecta+ e a equipe Nirvana/image_01.png", "funcao": "Líder da equipe." },
+      { "nome": "Arthur Fabrício da Silva Pires de Oliveira", "imagem": "OBT_2026_embedded_images/Nirvana/Sobre o projeto Conecta+ e a equipe Nirvana/image_02.png", "funcao": "Equipe Matemática." },
+      { "nome": "Victoria da Silva Maciel", "imagem": "OBT_2026_embedded_images/Nirvana/Sobre o projeto Conecta+ e a equipe Nirvana/image_03.png", "funcao": "Equipe Matemática." },
+      { "nome": "Brayan Emanuel Carvalho Boto", "imagem": "OBT_2026_embedded_images/Nirvana/Sobre o projeto Conecta+ e a equipe Nirvana/image_04.png", "funcao": "Equipe Social." },
+      { "nome": "Guilherme Villas Boas Braz", "imagem": "OBT_2026_embedded_images/Nirvana/Sobre o projeto Conecta+ e a equipe Nirvana/image_05.png", "funcao": "Equipe Social." },
+      { "nome": "Thiago de Aguiar da Silva", "imagem": "OBT_2026_embedded_images/Nirvana/Sobre o projeto Conecta+ e a equipe Nirvana/image_06.png", "funcao": "Equipe Social." }
+    ],
+    "ods": [4, 10]
+  },
+  {
+    "id": "os-resenhudos",
+    "nome_equipe": "Os Resenhudos",
+    "nome_app": "PancreAI",
+    "descricao": "Aplicativo para pessoas que utilizam enzimas pancreáticas. O usuário fotografa uma refeição, a IA identifica alimentos e porções, e o app calcula gordura estimada e sugere unidades enzimáticas com revisão obrigatória do usuário.",
+    "url_imagem_equipe": "OBT_2026_assets/OBT 2026/Os Resenhudos/Imagens/Logo da Equipe/logopancreai.jpeg",
+    "url_banner": "OBT_2026_assets/OBT 2026/Os Resenhudos/BannerPancreAI.pdf",
+    "url_youtube": "https://www.youtube.com/embed/QcG_hC_OuH8",
+    "url_app": "https://drive.google.com/drive/folders/1-wzFFA0PtbMVvq9c4kaf8A3cW0bLr0-W?usp=drive_link",
+    "url_apk_local": null,
+    "botao_votacao": { "texto": "Votar", "ativo": true },
+    "membros_equipe": [
+      { "nome": "Rafael Francischetto", "imagem": "OBT_2026_assets/OBT 2026/Os Resenhudos/Imagens/Fotos Individuais/rafael.jpeg", "funcao": "Liderança, idealização, prototipação, identidade visual, programação, integração, testes e publicação do aplicativo." },
+      { "nome": "Estevão Barbosa", "imagem": "OBT_2026_assets/OBT 2026/Os Resenhudos/Imagens/Fotos Individuais/estevao.jpeg", "funcao": "Provas técnicas, apoio na lógica computacional e validação dos fluxos e cálculos." },
+      { "nome": "Luiz Philippe Augusto", "imagem": "OBT_2026_assets/OBT 2026/Os Resenhudos/Imagens/Fotos Individuais/luiz.jpeg", "funcao": "Provas técnicas, apoio nas estimativas e revisão das regras de cálculo." },
+      { "nome": "Henrique Martinazzi", "imagem": "OBT_2026_assets/OBT 2026/Os Resenhudos/Imagens/Fotos Individuais/henrique.jpeg", "funcao": "Pesquisa do problema, levantamento de necessidades, requisitos e revisão da proposta." },
+      { "nome": "Mateus Aragão", "imagem": "OBT_2026_assets/OBT 2026/Os Resenhudos/Imagens/Fotos Individuais/mateus.jpeg", "funcao": "Revisão visual, testes de usabilidade e avaliação dos fluxos do aplicativo." },
+      { "nome": "Joaquim Estefan", "imagem": "OBT_2026_assets/OBT 2026/Os Resenhudos/Imagens/Fotos Individuais/joaquim.jpeg", "funcao": "Validação de requisitos e funcionalidades, organização de evidências, documentação e apresentação." }
+    ],
+    "ods": [3, 10]
+  },
+  {
+    "id": "os-six-sevens",
+    "nome_equipe": "Os Six Sevens",
+    "nome_app": "EcoPoupança",
+    "descricao": "Aplicativo para acompanhamento do consumo de energia elétrica, leitura da conta, metas de economia, gráficos comparativos, estimativas de redução de gastos e recomendações práticas para hábitos mais eficientes e sustentáveis.",
+    "url_imagem_equipe": "OBT_2026_assets/OBT 2026/Os Six Sevens/LOGO ECOPOUPANÇA.jpg",
+    "url_banner": "https://drive.google.com/drive/u/2/folders/1RZcirf93GVE4rEMdXKKTGMbI8e3g711X",
+    "url_youtube": "https://www.youtube.com/embed/8jz2xKs-jD8",
+    "url_app": "https://drive.google.com/drive/folders/1eeLLvGG8t8Ak3OilcaJ9Isx5jKJPQ6Gb",
+    "url_apk_local": "OBT_2026_assets/OBT 2026/Os Six Sevens/Eco_Poupanca_OBT2026_LucasEstaMechendo_Saia_VaNoOutro3.apk",
+    "botao_votacao": { "texto": "Votar", "ativo": true },
+    "membros_equipe": [
+      { "nome": "Lucas Bernardino Miranda", "imagem": "OBT_2026_pdf_images/Os Six Sevens/EQUIPE OS SIX SEVENS – ECOPOUPANÇA (1)/p02_01_X8.png", "funcao": "Equipe Matemática; prototipagem em Figma, interface/design no MIT App Inventor, banner e articulação da equipe." },
+      { "nome": "João Aguiar Bissoli", "imagem": "OBT_2026_pdf_images/Os Six Sevens/EQUIPE OS SIX SEVENS – ECOPOUPANÇA (1)/p03_01_X12.png", "funcao": "Equipe Matemática; responsável pela programação em blocos no MIT App Inventor." },
+      { "nome": "Gabriel Corrêa Cardoso", "imagem": "OBT_2026_pdf_images/Os Six Sevens/EQUIPE OS SIX SEVENS – ECOPOUPANÇA (1)/p04_01_X15.png", "funcao": "Capitão, equipe social, desenvolvimento da ideia, roteiro, vídeo, edição, transcrição e auxílio na interface do app." }
+    ],
+    "ods": [7]
+  },
+  {
+    "id": "pitufos",
+    "nome_equipe": "Pitufos",
+    "nome_app": "Eyessistant",
+    "descricao": "Aplicativo para auxiliar na detecção precoce da catarata usando inteligência artificial e a câmera do celular. A análise de uma fotografia do olho identifica possíveis indícios e orienta busca por avaliação oftalmológica.",
+    "url_imagem_equipe": "OBT_2026_assets/OBT 2026/Pitufos/logo.jpeg",
+    "url_banner": "OBT_2026_assets/OBT 2026/Pitufos/banner (2).pdf",
+    "url_youtube": "https://www.youtube.com/embed/mTUphCa6VQ8",
+    "url_app": "OBT_2026_assets/OBT 2026/Pitufos/Eyessistant.apk",
+    "url_apk_local": "OBT_2026_assets/OBT 2026/Pitufos/Eyessistant.apk",
+    "botao_votacao": { "texto": "Votar", "ativo": true },
+    "membros_equipe": [
+      { "nome": "Marlyson Rodrigues Souza", "imagem": "OBT_2026_assets/OBT 2026/Pitufos/Fotos Individuais/Marlyson Rodrigues Souza - Equipe Técnica_.jpg", "funcao": "Liderança, idealização, pesquisa, provas técnicas, prototipação, desenvolvimento, IA, testes, integração e publicação." },
+      { "nome": "Rafael Hiroshi Eguchi Neves", "imagem": "OBT_2026_assets/OBT 2026/Pitufos/Fotos Individuais/Rafael Hiroshi Eguchi Neves - Equipe Técnica.jpeg", "funcao": "Desenvolvimento, treinamento e validação da rede neural para identificação de catarata." },
+      { "nome": "Enzo Marcon", "imagem": "OBT_2026_assets/OBT 2026/Pitufos/Fotos Individuais/Enzo Marcon - Equipe Técnica_.jpg", "funcao": "Apoio no desenvolvimento da rede neural, preparação de dados e testes da IA." },
+      { "nome": "Cristina Teixeira", "imagem": "OBT_2026_assets/OBT 2026/Pitufos/Fotos Individuais/Cristina Teixeira- Equipe Social.jpg", "funcao": "Identidade visual, revisão da apresentação e produção do vídeo demonstrativo." },
+      { "nome": "Melissa Vidoto", "imagem": "OBT_2026_assets/OBT 2026/Pitufos/Fotos Individuais/Melissa Vidoto - Equipe Social.jpg", "funcao": "Identidade visual, organização de conteúdos e gravação/edição do vídeo." },
+      { "nome": "Lucca Richa Campagnoli", "imagem": "OBT_2026_assets/OBT 2026/Pitufos/Fotos Individuais/Lucca Richa Campagnoli - Equipe Social.jpeg", "funcao": "Prototipação das telas no Figma e apoio no desenvolvimento e revisão do front-end." }
+    ],
+    "ods": [3, 10]
+  },
+  {
+    "id": "rest",
+    "nome_equipe": "REST",
+    "nome_app": "Blink",
+    "descricao": "Aplicativo para promover saúde ocular durante o uso de telas. Pela câmera, analisa frequência e qualidade das piscadas, identifica sinais de fadiga ocular e recomenda exercícios, histórico e pausas inteligentes.",
+    "url_imagem_equipe": "OBT_2026_assets/OBT 2026/REST/Foto_Equipe_REST.jpg",
+    "url_banner": "OBT_2026_assets/OBT 2026/REST/Banner Semana EAT - Equipe REST -.pdf",
+    "url_youtube": "https://www.youtube.com/embed/O4RZinD2nGA",
+    "url_app": "https://drive.google.com/drive/folders/1gMhgnTrGq7Zh2iDWjK_RZUsPmvbGpGn_",
+    "url_apk_local": null,
+    "botao_votacao": { "texto": "Votar", "ativo": true },
+    "membros_equipe": [
+      { "nome": "Caio Rodrigues de Souza Aguiar", "imagem": "OBT_2026_assets/OBT 2026/REST/Fotos individuais/CAIO RODRIGUES DE SOUZA AGUIAR.jpg", "funcao": "Produção e gravação do vídeo, apoio na prova." },
+      { "nome": "Davi Nogueira de Bem", "imagem": "OBT_2026_assets/OBT 2026/REST/Fotos individuais/DAVI NOGUEIRA DE BEM.jpg", "funcao": "Produção do vídeo, apoio técnico pontual e prova." },
+      { "nome": "João Amaro Marins", "imagem": "OBT_2026_assets/OBT 2026/REST/Fotos individuais/JOÃO AMARO MARINS.jpg", "funcao": "Pesquisa, validação das ideias e apoio na prova." },
+      { "nome": "Lucas Chaves de Castro", "imagem": "OBT_2026_assets/OBT 2026/REST/Fotos individuais/LUCAS CHAVES DE CASTRO.jpg", "funcao": "Apoio ao desenvolvimento, testes do aplicativo e suporte técnico." },
+      { "nome": "Malu Mariani Diaz Horta", "imagem": "OBT_2026_assets/OBT 2026/REST/Fotos individuais/MALU MARIANI DIAZ HORTA.jpg", "funcao": "Produção do vídeo, organização de conteúdo e apoio na prova." },
+      { "nome": "Pedro Henrique Teodolino Andrade", "imagem": "OBT_2026_assets/OBT 2026/REST/Fotos individuais/PEDRO HENRIQUE TEODOLINO ANDRADE.png", "funcao": "Capitão, desenvolvimento do aplicativo e UX/UI." }
+    ],
+    "ods": [3]
+  },
+  {
+    "id": "sapiens",
+    "nome_equipe": "Sapiens",
+    "nome_app": "Sapience",
+    "descricao": "Aplicativo para centralizar informações sobre olimpíadas científicas, reunindo editais, datas, materiais, favoritos, notificações, busca por área de interesse e portal de dúvidas para democratizar oportunidades acadêmicas.",
+    "url_imagem_equipe": "OBT_2026_assets/OBT 2026/Sapiens/Logo_.jpg",
+    "url_banner": "OBT_2026_assets/OBT 2026/Sapiens/Sapiens-Banner-OBT.pdf",
+    "url_youtube": "https://www.youtube.com/embed/gHQkt1xbGy0",
+    "url_app": "OBT_2026_assets/OBT 2026/Sapiens/Sapience.apk",
+    "url_apk_local": "OBT_2026_assets/OBT 2026/Sapiens/Sapience.apk",
+    "botao_votacao": { "texto": "Votar", "ativo": true },
+    "membros_equipe": [
+      { "nome": "Enzo Versiani Rodrigues Lima", "imagem": "OBT_2026_pdf_images/Sapiens/App Sapience/p02_01_X12.jpg", "funcao": "Programador da Equipe Técnica." },
+      { "nome": "João Paulo Schaffel Bremenkamp", "imagem": "OBT_2026_pdf_images/Sapiens/App Sapience/p02_02_X14.jpg", "funcao": "Programador da Equipe Técnica." },
+      { "nome": "Arthur Pazes Bernardo", "imagem": "OBT_2026_pdf_images/Sapiens/App Sapience/p02_03_X15.jpg", "funcao": "Diretor de design e marketing." },
+      { "nome": "Evelyn Nobre dos Santos", "imagem": "OBT_2026_pdf_images/Sapiens/App Sapience/p03_01_X18.jpg", "funcao": "Auxiliar de design e marketing." },
+      { "nome": "Sophia Borges Silva", "imagem": "OBT_2026_pdf_images/Sapiens/App Sapience/p03_02_X19.jpg", "funcao": "Auxiliar de design e marketing." }
+    ],
+    "ods": [4, 10]
+  },
+  {
+    "id": "tech-tronicos",
+    "nome_equipe": "Tech-Trônicos",
+    "nome_app": "CalcSafe",
+    "descricao": "Protótipo de aplicativo de denúncia segura e discreta para mulheres em situação de violência. A interface é camuflada como calculadora e revela recursos de denúncia, evidências, contatos de confiança e pedido de ajuda após uma combinação secreta.",
+    "url_imagem_equipe": "OBT_2026_pdf_images/Tech-Trônicos/Equipe Tech-Trônicos/p01_01_X4.jpg",
+    "url_banner": "https://drive.google.com/file/d/17mSesZMLK9TTqTI-D_fMOJHDQ4OY1PWf/view?usp=drivesdk",
+    "url_youtube": "https://www.youtube.com/embed/w28v8yO4WMA",
+    "url_app": "https://drive.google.com/drive/folders/1dSsWV0HNuewyUIuGo0e7Ypem-LBSYXCx",
+    "url_apk_local": null,
+    "botao_votacao": { "texto": "Votar", "ativo": true },
+    "membros_equipe": [
+      { "nome": "Marcos Daniel Pereira da Silva", "imagem": "OBT_2026_pdf_images/Tech-Trônicos/Equipe Tech-Trônicos/p01_02_X8.jpg", "funcao": "Líder do grupo; equipe social." },
+      { "nome": "Kauandra Souza Silva", "imagem": "OBT_2026_pdf_images/Tech-Trônicos/Equipe Tech-Trônicos/p01_03_X9.jpg", "funcao": "Equipe social." },
+      { "nome": "Arthur Benevides Souza Correia", "imagem": "OBT_2026_pdf_images/Tech-Trônicos/Equipe Tech-Trônicos/p02_01_X12.jpg", "funcao": "Equipe matemática." },
+      { "nome": "Juan Victor Bragança Barcellos", "imagem": "OBT_2026_pdf_images/Tech-Trônicos/Equipe Tech-Trônicos/p02_02_X13.jpg", "funcao": "Equipe matemática." },
+      { "nome": "Rafael Costa da Silva Coelho", "imagem": "OBT_2026_pdf_images/Tech-Trônicos/Equipe Tech-Trônicos/p02_03_X14.jpg", "funcao": "Equipe matemática." }
+    ],
+    "ods": [5]
+  },
+  {
+    "id": "technova",
+    "nome_equipe": "TechNova",
+    "nome_app": "Smart Line",
+    "descricao": "Aplicativo de gestão logística com agendamento inteligente, monitoramento em tempo real e recomendação de pontos de parada para otimizar o fluxo de caminhões nos acessos aos portos, reduzindo filas, emissões e tempo de espera.",
+    "url_imagem_equipe": "OBT_2026_pdf_images/TechNova/Tech Nova/p01_01_X7.jpg",
+    "url_banner": "OBT_2026_assets/OBT 2026/TechNova/BANNER_TechNova.pdf",
+    "url_youtube": "https://www.youtube.com/embed/p-4mwIFl6LY",
+    "url_app": "OBT_2026_assets/OBT 2026/TechNova/smart_line.apk",
+    "url_apk_local": "OBT_2026_assets/OBT 2026/TechNova/smart_line.apk",
+    "botao_votacao": { "texto": "Votar", "ativo": true },
+    "membros_equipe": [
+      { "nome": "Arthur Pereira Santana", "imagem": "OBT_2026_pdf_images/TechNova/Tech Nova/p02_01_X13.jpg", "funcao": "Equipe Social." },
+      { "nome": "Daniel Nascimento de Oliveira", "imagem": "OBT_2026_pdf_images/TechNova/Tech Nova/p02_02_X14.jpg", "funcao": "Equipe Social." },
+      { "nome": "João Vitor Barcellos Leite da Silva", "imagem": "OBT_2026_pdf_images/TechNova/Tech Nova/p03_01_X17.jpg", "funcao": "Equipe Social." },
+      { "nome": "João Pedro Vervloet Gonçalves", "imagem": "OBT_2026_pdf_images/TechNova/Tech Nova/p03_02_X18.jpg", "funcao": "Equipe de Matemática." },
+      { "nome": "Lucas Costabeber Schneider", "imagem": "OBT_2026_pdf_images/TechNova/Tech Nova/p04_01_X21.jpg", "funcao": "Equipe de Matemática." },
+      { "nome": "Pedro Santos Soto", "imagem": "OBT_2026_pdf_images/TechNova/Tech Nova/p04_02_X22.jpg", "funcao": "Equipe de Matemática." }
+    ],
+    "ods": [8, 9, 11]
   }
-] 
+]
