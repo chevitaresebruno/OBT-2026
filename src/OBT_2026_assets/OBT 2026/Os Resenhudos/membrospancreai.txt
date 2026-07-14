@@ -1,0 +1,11 @@
+Rafael Francischetto: Responsável pela liderança e desenvolvimento do projeto, incluindo idealização, prototipação no Figma, provas técnicas, identidade visual, programação, implementação das funcionalidades, integração dos bancos de dados, testes e publicação do aplicativo.
+
+Estevão Barbosa: Participação nas provas técnicas, apoio na lógica computacional e validação dos fluxos e cálculos do aplicativo.
+
+Luiz Philippe Augusto: Participação nas provas técnicas, apoio nas estimativas e revisão das regras utilizadas nos cálculos do projeto.
+
+Henrique Martinazzi: Colaboração na pesquisa do problema, levantamento das necessidades dos usuários, definição dos requisitos e revisão da proposta do aplicativo.
+
+Mateus Aragão: Apoio na revisão visual, testes de usabilidade e avaliação dos principais fluxos do aplicativo.
+
+Joaquim Estefan: Responsável pelo apoio na validação dos requisitos e funcionalidades, organização das evidências do desenvolvimento, revisão final dos conteúdos e colaboração na documentação e apresentação do projeto.

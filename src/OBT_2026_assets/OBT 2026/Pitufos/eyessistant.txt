@@ -1,0 +1,5 @@
+ODS 3: Saúde e Bem-Estar
+ODS 10: Redução das Desigualdades
+
+Resumo do problema e oque fizemos:
+O Eyessistant é um aplicativo desenvolvido para auxiliar na detecção precoce da catarata utilizando inteligência artificial e a câmera do celular. Por meio da análise de uma fotografia do olho, uma rede neural desenvolvida por nós identifica possíveis indícios da doença e orienta o usuário a buscar avaliação com um oftalmologista quando necessário. O projeto foi criado para ajudar a enfrentar o problema da dificuldade de acesso ao diagnóstico precoce, especialmente em locais com poucos profissionais e recursos na área da saúde, contribuindo para um encaminhamento mais rápido e para a prevenção da perda de visão causada pela catarata.
