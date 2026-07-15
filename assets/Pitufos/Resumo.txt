@@ -1,0 +1,11 @@
+Marlyson Souza: Responsável pela liderança e maior parte do projeto, incluindo idealização, pesquisa, provas técnicas, prototipação, desenvolvimento da aplicação, implementação da inteligência artificial, testes, integração e publicação da versão final.
+
+Rafael Hiroshi: Colaboração no desenvolvimento, treinamento e validação da rede neural utilizada para identificação dos sinais de catarata.
+
+Enzo Marcon: Apoio no desenvolvimento da rede neural, preparação dos dados e realização de testes relacionados ao funcionamento da inteligência artificial.
+
+Cristina Teixeira: Colaboração na identidade visual do projeto, revisão da apresentação e produção do vídeo demonstrativo.
+
+Melissa Vidoto: Apoio na definição da identidade visual, organização dos conteúdos e gravação e edição do vídeo de apresentação.
+
+Lucca Richa: Participação na prototipação das telas no Figma e apoio no desenvolvimento e revisão do front-end da aplicação.

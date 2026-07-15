@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IFES Campus Serra na Escola Avançada de Tecnologia da Olimpíada Brasileira de Tecnologia 2026 – Ajude nossos alunos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #0b0f1a; color: #e5e7eb; scroll-behavior: smooth; }
+
+        /* Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(129, 140, 248, 0.5);
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Gradientes */
+        .gradient-text {
+            background: linear-gradient(135deg, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #818cf8, #a78bfa);
+        }
+
+        /* Botão CTA */
+        .btn-cta {
+            display: inline-block;
+            padding: 0.9rem 2.2rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.25s ease;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 25px -6px rgba(129, 140, 248, 0.4);
+        }
+        .btn-cta:hover {
+            transform: scale(1.04);
+            box-shadow: 0 12px 35px -8px rgba(129, 140, 248, 0.6);
+        }
+
+        /* Seções com fundo alternado */
+        .section-light {
+            background: rgba(255, 255, 255, 0.02);
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        /* Ícones e ilustrações (usando caracteres) */
+        .icon-big { font-size: 2.8rem; line-height: 1; }
+
+        /* Selo ODS */
+        .ods-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.15rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 9999px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            border: 1px solid;
+            line-height: 1.4;
+            transition: all 0.2s;
+            cursor: default;
+        }
+        .ods-badge:hover {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
+
+        /* Responsividade */
+        @media (max-width: 640px) {
+            .btn-cta { padding: 0.7rem 1.6rem; font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== HERO ========== -->
+    <header class="relative min-h-screen flex items-center justify-center overflow-hidden px-6 py-20">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_#818cf8_0%,_transparent_70%)] pointer-events-none"></div>
+        <div class="max-w-6xl mx-auto text-center relative z-10">
+            <h1 class="text-5xl md:text-7xl font-extrabold leading-[1.1]">
+                <span class="text-white">Leve a tecnologia do</span><br />
+                <span class="gradient-text">IFES Serra</span>
+                <span class="text-white">para o Brasil</span>
+            </h1>
+            <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mt-6 leading-relaxed">
+                Nossos alunos foram selecionados para a <strong class="text-indigo-300">Escola Avançada de Tecnologia</strong>, que ocorrerá dentre os dias 28 e 31 de julho de 2026, em São José dos Campos, São Paulo.
+                Com a sua ajuda, eles representarão o Espírito Santo com Inovação, Ciência, Tecnologia e muito talento.
+            </p>
+            <div class="mt-10 flex flex-wrap justify-center gap-4">
+                <a href="https://www.vakinha.com.br/vaquinha/ajude-54-alunos-do-ifes-campus-serra-a-representar-o-espirito-santo-na-escola-avancada-de-tecnologia?utm_source=site-vakinha&utm_medium=share&utm_campaign=pagina-divulgacao" target="_blank" rel="noopener noreferrer" class="btn-cta gradient-bg text-white">
+                    💜 Ajude nossos alunos
+                </a>
+                <a href="#equipes" class="btn-cta glass text-white border border-white/20 hover:bg-white/10">
+                    Conheça as equipes →
+                </a>
+                <a href="equipe.html?index=0" class="btn-cta glass text-white border border-white/20 hover:bg-white/10">
+                    Votar
+                </a>
+            </div>
+            <div class="mt-12 flex justify-center gap-8 text-gray-400 text-sm">
+                <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-indigo-400"></span> Projetos reais</span>
+                <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-indigo-400"></span> Impacto social</span>
+                <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-indigo-400"></span> Futuro da tecnologia</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== O QUE É A EAT ========== -->
+    <section class="section-light py-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-14">
+                <span class="text-indigo-400 text-sm font-semibold tracking-widest uppercase">Sobre a competição</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-2">
+                    <span class="text-white">O que é a</span>
+                    <span class="gradient-text">EAT?</span>
+                </h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-10 items-start">
+                <div class="space-y-4 text-gray-300 leading-relaxed">
+                    <p>
+                        A <strong class="text-indigo-300">Escola Avançada de Tecnologia (EAT)</strong> representa a etapa final da Olimpíada Brasileira de Tecnologia (OBT), uma das principais competições nacionais voltadas à inovação, à ciência e ao desenvolvimento tecnológico entre estudantes. Durante essa experiência, os participantes são desafiados a aplicar seus conhecimentos no Desafio APP, desenvolvendo soluções digitais para problemas reais da sociedade. A atividade estimula o pensamento crítico, a criatividade, a colaboração e a capacidade de transformar ideias em projetos tecnológicos concretos.
+                    </p>
+                    <p>
+                        Mais do que uma competição, a EAT proporciona uma verdadeira imersão no universo da inovação. Os estudantes têm a oportunidade de aprimorar seus projetos, aprender com especialistas, trocar experiências com jovens de diferentes regiões do país e se aproximar do ecossistema brasileiro de ciência, tecnologia e empreendedorismo. E ainda concorrem à uma viagem para o MIT e Harvard, em Boston, nos EUA.
+.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <span class="glass px-4 py-2 rounded-full text-sm text-indigo-200">🏅 Reconhecimento nacional e internacional</span>
+                        <span class="glass px-4 py-2 rounded-full text-sm text-indigo-200">💡 Prototipação e desenvolvimento reais</span>
+                        <span class="glass px-4 py-2 rounded-full text-sm text-indigo-200">🌍 Networking</span>
+                    </div>
+                </div>
+                <div class="glass p-6 rounded-2xl border border-indigo-400/20">
+                    <h3 class="text-xl font-semibold text-white mb-3">Impacto na formação</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start gap-3">
+                            <span class="text-indigo-400 text-lg">▹</span>
+                            <span>Desenvolvimento de habilidades técnicas e socioemocionais</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-indigo-400 text-lg">▹</span>
+                            <span>Exposição a desafios do mercado e da academia</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-indigo-400 text-lg">▹</span>
+                            <span>Portfólio diferenciado para faculdades e empresas nacionais e multinacionais</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-indigo-400 text-lg">▹</span>
+                            <span>Oportunidade de transformar ideias em negócios</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== QUEM SOMOS ========== -->
+    <section class="py-20 px-6">
+        <div class="max-w-5xl mx-auto text-center">
+            <span class="text-indigo-400 text-sm font-semibold tracking-widest uppercase">Nossa origem</span>
+            <h2 class="text-4xl md:text-5xl font-bold mt-2">
+                <span class="text-white">IFES – </span>
+                <span class="gradient-text">Campus Serra</span>
+            </h2>
+            <p class="text-gray-300 text-lg max-w-3xl mx-auto mt-6 leading-relaxed">
+                Somos alunos e professores do <strong class="text-indigo-300">Instituto Federal do Espírito Santo – Campus Serra</strong>, 
+                uma instituição referência em ensino técnico e tecnológico. Nossas equipes são formadas por jovens talentos 
+                que dedicam horas de estudo e pesquisa para criar soluções inovadoras.
+            </p>
+            <div class="mt-10 flex flex-wrap justify-center gap-8 text-gray-400">
+                <div><span class="block text-3xl font-bold text-white">19</span> equipes classificadas</div>
+                <div><span class="block text-3xl font-bold text-white">54</span> alunos participantes</div>
+                <div><span class="block text-3xl font-bold text-white">+20</span> projetos desenvolvidos</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== POR QUE PRECISAMOS DA SUA AJUDA ========== -->
+    <section class="section-light py-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-14">
+                <span class="text-indigo-400 text-sm font-semibold tracking-widest uppercase">Campanha de financiamento</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-2">
+                    <span class="text-white">Por que </span>
+                    <span class="gradient-text">precisamos</span>
+                    <span class="text-white"> da sua ajuda?</span>
+                </h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card rounded-2xl p-6 text-center">
+                    <div class="icon-big mb-3">✈️</div>
+                    <h3 class="text-xl font-semibold text-white">Transporte</h3>
+                    <p class="text-gray-400 text-sm mt-2">Deslocamento dos alunos até o local da competição, garantindo que todos cheguem com segurança e pontualidade.</p>
+                </div>
+                <div class="glass-card rounded-2xl p-6 text-center">
+                    <div class="icon-big mb-3">🏨</div>
+                    <h3 class="text-xl font-semibold text-white">Hospedagem</h3>
+                    <p class="text-gray-400 text-sm mt-2">Estadia confortável para os dias de evento, essencial para o descanso e preparação das equipes.</p>
+                </div>
+                <div class="glass-card rounded-2xl p-6 text-center">
+                    <div class="icon-big mb-3">🍽️</div>
+                    <h3 class="text-xl font-semibold text-white">Alimentação</h3>
+                    <p class="text-gray-400 text-sm mt-2">Refeições adequadas para manter a energia e o foco durante toda a competição.</p>
+                </div>
+            </div>
+            <div class="mt-10 text-center">
+                <p class="text-gray-300 max-w-2xl mx-auto">
+                    Cada real doado é um passo a mais para que nossos alunos possam mostrar seu potencial no maior palco da tecnologia brasileira.
+                </p>
+                <a href="https://www.vakinha.com.br/vaquinha/ajude-54-alunos-do-ifes-campus-serra-a-representar-o-espirito-santo-na-escola-avancada-de-tecnologia?utm_source=site-vakinha&utm_medium=share&utm_campaign=pagina-divulgacao" target="_blank" rel="noopener noreferrer" class="btn-cta gradient-bg text-white mt-6 inline-block">
+                    💜 Faça uma doação agora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== COMO SUA DOAÇÃO FAZ A DIFERENÇA ========== -->
+    <section class="py-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-14">
+                <span class="text-indigo-400 text-sm font-semibold tracking-widest uppercase">Impacto real</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-2">
+                    <span class="text-white">Sua doação </span>
+                    <span class="gradient-text">transforma</span>
+                    <span class="text-white"> vidas</span>
+                </h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <span class="text-indigo-400 text-2xl">🎯</span>
+                        <div>
+                            <h3 class="text-white font-semibold text-lg">Viabiliza a participação</h3>
+                            <p class="text-gray-400 text-sm">Sem recursos, muitos alunos não teriam condições de arcar com os custos da viagem. Sua contribuição garante que ninguém fique de fora.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="text-indigo-400 text-2xl">🧠</span>
+                        <div>
+                            <h3 class="text-white font-semibold text-lg">Fomenta a inovação</h3>
+                            <p class="text-gray-400 text-sm">Ao investir nesses jovens, você está impulsionando o desenvolvimento de tecnologias que podem resolver problemas reais da sociedade.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="text-indigo-400 text-2xl">🌟</span>
+                        <div>
+                            <h3 class="text-white font-semibold text-lg">Inspira futuras gerações</h3>
+                            <p class="text-gray-400 text-sm">O exemplo desses alunos motiva outros estudantes a seguirem carreiras científicas e tecnológicas, fortalecendo todo o ecossistema.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass p-8 rounded-2xl border border-indigo-400/20 flex flex-col items-center justify-center text-center">
+                    <span class="text-6xl mb-4">🤝</span>
+                    <h4 class="text-2xl font-bold text-white">Seja um parceiro</h4>
+                    <p class="text-gray-400 mt-2">Empresas e pessoas físicas podem apoiar diretamente nossas equipes. Entre em contato para saber mais.</p>
+                    <a href="https://www.vakinha.com.br/vaquinha/ajude-54-alunos-do-ifes-campus-serra-a-representar-o-espirito-santo-na-escola-avancada-de-tecnologia?utm_source=site-vakinha&utm_medium=share&utm_campaign=pagina-divulgacao" target="_blank" rel="noopener noreferrer" class="btn-cta gradient-bg text-white mt-6 text-sm">
+                        Quero apoiar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== VÍDEO DA CAMPANHA ========== -->
+    <section class="section-light py-20 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <span class="text-indigo-400 text-sm font-semibold tracking-widest uppercase">Assista ao vídeo</span>
+            <h2 class="text-4xl md:text-5xl font-bold mt-2">
+                <span class="text-white">A história por trás da </span>
+                <span class="gradient-text">campanha</span>
+            </h2>
+            <p class="text-gray-300 text-lg max-w-2xl mx-auto mt-4">
+                Conheça os bastidores, as equipes e a emoção de representar o IFES na maior olimpíada de tecnologia do Brasil.
+            </p>
+            <div class="mt-8 rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+                <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/gOV-4KHMcSE?si=9ec-UNT1EDbw5WqO" 
+                        frameborder="0" allowfullscreen 
+                        title="Vídeo da campanha EAT 2026"></iframe>
+            </div>
+            <div class="mt-8">
+                <a href="https://www.vakinha.com.br/vaquinha/ajude-54-alunos-do-ifes-campus-serra-a-representar-o-espirito-santo-na-escola-avancada-de-tecnologia?utm_source=site-vakinha&utm_medium=share&utm_campaign=pagina-divulgacao" target="_blank" rel="noopener noreferrer" class="btn-cta gradient-bg text-white">
+                    💜 Contribua após assistir
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== NOSSAS EQUIPES (CARDS) ========== -->
+    <section id="equipes" class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-14">
+                <span class="text-indigo-400 text-sm font-semibold tracking-widest uppercase">Conheça os projetos</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-2">
+                    <span class="text-white">Equipes </span>
+                    <span class="gradient-text">classificadas</span>
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto mt-4">
+                    Clique em um card para ver todos os detalhes do projeto, incluindo seu vídeo, o protótipo em Figma, seu aplicativo .apk e os membros da equipe.
+                </p>
+            </div>
+
+            <div id="cards-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Os cards serão inseridos via JS -->
+            </div>
+            <div id="loading" class="text-center text-gray-400 text-lg mt-10">
+                <span class="inline-block animate-pulse">Carregando equipes...</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section class="section-light py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-14">
+                <span class="text-indigo-400 text-sm font-semibold tracking-widest uppercase">Dúvidas frequentes</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-2">
+                    <span class="gradient-text">FAQ</span>
+                </h2>
+            </div>
+            <div class="space-y-6">
+                <div class="glass p-6 rounded-2xl border border-white/5">
+                    <h4 class="text-white font-semibold text-lg">Como posso doar?</h4>
+                    <p class="text-gray-400 mt-2">Clique em algum dos botões de ajuda/apoio aos nossos alunos e você será redirecionado para nossa página de arrecadação na Vakinha. Lá você pode escolher o valor e a forma de doação.</p>
+                </div>
+                <div class="glass p-6 rounded-2xl border border-white/5">
+                    <h4 class="text-white font-semibold text-lg">O dinheiro vai diretamente para os alunos?</h4>
+                    <p class="text-gray-400 mt-2">Sim! Todos os recursos arrecadados serão usados exclusivamente para custear transporte, hospedagem, alimentação e outras despesas da participação das equipes na EAT.</p>
+                </div>
+                <div class="glass p-6 rounded-2xl border border-white/5">
+                    <h4 class="text-white font-semibold text-lg">Posso ajudar de outra forma?</h4>
+                    <p class="text-gray-400 mt-2">Além das doações, você pode compartilhar a campanha em suas redes sociais, divulgar para empresas parceiras ou até mesmo oferecer mentoria para os alunos.</p>
+                </div>
+                <div class="glass p-6 rounded-2xl border border-white/5">
+                    <h4 class="text-white font-semibold text-lg">Quando será a Escola Avançada de Tecnologia?</h4>
+                    <p class="text-gray-400 mt-2">A competição acontecerá dentre os dias 28 e 31 de julho de 2026, em São José dos Campos, SP. Fique atento às nossas redes sociais para acompanhar a jornada das equipes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== RODAPÉ ========== -->
+    <footer class="py-12 px-6 border-t border-white/10 text-center text-gray-500 text-sm">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <span>© 2026 IFES – Campus Serra · EAT 2026</span>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-indigo-400 transition">Sobre</a>
+                <a href="#" class="hover:text-indigo-400 transition">Contato</a>
+                <a href="#" class="hover:text-indigo-400 transition">Transparência</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== SCRIPT PARA CARREGAR OS CARDS (COM ODS) ========== -->
+    <script type="module">
+        import {fetch_data_json} from "./fetch_data.js";
+
+        (function() {
+            const container = document.getElementById('cards-container');
+            const loading = document.getElementById('loading');
+
+            // Mapeamento ODS
+            const odsMap = {
+                1: { emoji: '🛑', cor: '#e5243b', nome: 'Erradicação da pobreza' },
+                2: { emoji: '🌾', cor: '#dda63a', nome: 'Fome zero' },
+                3: { emoji: '🏥', cor: '#4c9f38', nome: 'Saúde e bem-estar' },
+                4: { emoji: '📚', cor: '#c5192d', nome: 'Educação de qualidade' },
+                5: { emoji: '⚧️', cor: '#ff3a21', nome: 'Igualdade de gênero' },
+                6: { emoji: '💧', cor: '#26bde2', nome: 'Água potável e saneamento' },
+                7: { emoji: '⚡', cor: '#fcc30b', nome: 'Energia limpa e acessível' },
+                8: { emoji: '💼', cor: '#a21942', nome: 'Trabalho decente e crescimento econômico' },
+                9: { emoji: '🔬', cor: '#fd6925', nome: 'Inovação e infraestrutura' },
+                10: { emoji: '⚖️', cor: '#dd1367', nome: 'Redução das desigualdades' },
+                11: { emoji: '🏙️', cor: '#fd9d24', nome: 'Cidades e comunidades sustentáveis' },
+                12: { emoji: '♻️', cor: '#bf8b2e', nome: 'Consumo e produção responsáveis' },
+                13: { emoji: '🌍', cor: '#3f7e44', nome: 'Ação contra a mudança global do clima' },
+                14: { emoji: '🐠', cor: '#0a97d9', nome: 'Vida na água' },
+                15: { emoji: '🌳', cor: '#56c02b', nome: 'Vida terrestre' },
+                16: { emoji: '🕊️', cor: '#00689d', nome: 'Paz, justiça e instituições eficazes' },
+                17: { emoji: '🤝', cor: '#19486a', nome: 'Parcerias e meios de implementação' }
+            };
+
+            function renderODS(odsArray) {
+                if (!odsArray || odsArray.length === 0) return '';
+                return odsArray.map(num => {
+                    const info = odsMap[num];
+                    if (!info) return '';
+                    return `<span class="ods-badge" style="background-color: ${info.cor}33; border-color: ${info.cor}; color: ${info.cor}; cursor: pointer;" title="${info.nome}" onclick="window.open('https://brasil.un.org/pt-br/sdgs/${num}', '_blank')">
+                        ${info.emoji} ${num} - ${info.nome}
+                    </span>`;
+                }).join('');
+            }
+
+            function carregarEquipes() {
+                const dadosLocais = Array.isArray(window.EQUIPES_DATA) ? window.EQUIPES_DATA : null;
+
+                if (window.location.protocol === 'file:' && dadosLocais) {
+                    return Promise.resolve(dadosLocais);
+                }
+
+                return fetch_data_json()
+                    .catch(err => {
+                        if (dadosLocais) {
+                            console.warn('Usando dados locais de data.js como fallback.', err);
+                            return dadosLocais;
+                        }
+                        throw err;
+                    });
+            }
+
+            carregarEquipes()
+                .then(equipes => {
+                    loading.style.display = 'none';
+                    equipes.forEach((eq, index) => {
+                        const card = document.createElement('a');
+                        card.href = `equipe.html?index=${index}`;
+                        card.className =
+                            'glass-card rounded-2xl p-5 text-center group block transition-all';
+                        // Gera os selos ODS
+                        const odsHtml = renderODS(eq.ods || []);
+
+                        card.innerHTML = `
+                            <div class="w-28 h-28 mx-auto rounded-full overflow-hidden border-2 border-indigo-400/30 group-hover:border-indigo-400 transition duration-300">
+                                <img src="${eq.url_imagem_equipe}" alt="${eq.nome_equipe}" class="w-full h-full object-cover" />
+                            </div>
+                            <h2 class="text-xl font-semibold text-white mt-4 group-hover:text-indigo-300 transition">${eq.nome_equipe}</h2>
+                            <div class="flex justify-center flex-wrap gap-1 mt-2">
+                                ${odsHtml}
+                            </div>
+                            <span class="text-xs text-indigo-400/70 uppercase tracking-wider mt-2 block">Ver projeto →</span>
+                        `;
+                        container.appendChild(card);
+                    });
+                })
+                .catch(err => {
+                    loading.textContent = '❌ Erro ao carregar os dados.';
+                    console.error(err);
+                });
+        })();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+Descrição das contribuições dos membros
+
+A distribuição das atividades acompanhou a estrutura da Olimpíada Brasileira de Tecnologia: uma etapa matemática/técnica, uma etapa social com estudo do problema e produção de vídeo, a prototipagem conjunta da solução e, posteriormente, o desenvolvimento do aplicativo funcional para o Desafio App.
+
+Wallace
+Participou da equipe social e da produção do vídeo de apresentação do problema e da proposta do grupo. Também contribuiu para a construção do protótipo e atuou diretamente, ao lado de Juan, no desenvolvimento do aplicativo VigiaGlic, participando da implementação das funcionalidades, dos ajustes de interface e das correções necessárias para transformar a proposta inicial em uma solução funcional.
+
+Juan
+Participou da equipe social e da produção do vídeo, contribuindo para comunicar de forma clara o problema escolhido e a solução proposta. Ajudou na elaboração do protótipo e, junto de Wallace, foi responsável pelo desenvolvimento do aplicativo VigiaGlic, trabalhando na estrutura das telas, nas funcionalidades, nas integrações, nos testes e no aperfeiçoamento geral do projeto.
+
+Henrique
+Participou das provas da equipe matemática/técnica, contribuindo para a resolução das questões de matemática aplicada e lógica computacional. Também participou do vídeo social e ajudou na elaboração do protótipo, colaborando em diferentes etapas da OBT e contribuindo para aproximar a parte técnica da proposta social apresentada pela equipe.
+
+Hélio
+Participou das provas da equipe matemática/técnica, atuando na resolução dos desafios objetivos de matemática aplicada e lógica computacional. Também ajudou na construção do protótipo do VigiaGlic, contribuindo para a definição inicial da solução, da organização das funcionalidades e da forma como o aplicativo deveria responder ao problema estudado.
+
+João Dadalto
+Participou das provas da equipe matemática/técnica, colaborando na resolução das questões e desafios propostos pela OBT. Também ajudou na elaboração do protótipo do aplicativo, participando da etapa em que a ideia foi transformada em uma representação visual e funcional da solução.
+
+Matheus
+Participou das reuniões (algumas).

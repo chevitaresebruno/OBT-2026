@@ -1,0 +1,8 @@
+O PancreAI é um aplicativo funcional desenvolvido para pessoas que utilizam enzimas pancreáticas. O usuário fotografa uma refeição ou seleciona uma imagem da galeria, e a inteligência artificial Gemini identifica os possíveis alimentos, estima suas porções e sugere ingredientes ocultos compatíveis com o prato. Antes do cálculo, todos os itens podem ser confirmados, editados, substituídos ou removidos pelo usuário.
+
+Com base nos alimentos revisados, no banco nutricional e no tratamento previamente cadastrado, o PancreAI calcula a gordura estimada da refeição e apresenta uma estimativa de unidades enzimáticas. O aplicativo também possui histórico de refeições, favoritos, lembretes, relatório médico, unidades de medida, suporte multilíngue, modo infantil, área do responsável e armazenamento local das configurações.
+
+A análise de imagens reais já está integrada e funcional, mantendo a chave da IA protegida no servidor. Como a identificação visual pode apresentar imprecisões, o aplicativo exige a revisão do usuário e informa quando a foto precisa ser refeita. O PancreAI não altera prescrições e não substitui a orientação de médicos ou nutricionistas.
+
+ODS 3: Saúde e Bem-Estar  
+ODS 10: Redução das Desigualdades
