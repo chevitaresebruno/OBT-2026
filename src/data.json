@@ -238,11 +238,7 @@
         "nome": "João Dadalto",
         "imagem": "assets/betaSquad/fotoJoaoDadalto.jpg",
         "funcao": "Equipe de Matemática"
-      },
-      {
-        "nome": "Matheus",
-        "imagem": null,
-        "funcao": "Equipe social"
+      
       }
     ],
     "ods": [
@@ -269,32 +265,32 @@
     "membros_equipe": [
       {
         "nome": "Thainini Rodrigues Sabino",
-        "imagem": "assets/Compilando Ideias/Sobre nossa equipe/image_02.png",
+        "imagem": "assets/Compilando Ideias/Compilando Ideias/Sobre nossa equipe/thay.png",
         "funcao": "Equipe Social"
       },
       {
         "nome": "Lavinia Lima Rodrigues da Silva",
-        "imagem": "assets/Compilando Ideias/Sobre nossa equipe/image_03.png",
+        "imagem": "assets/Compilando Ideias/Compilando Ideias/Sobre nossa equipe/lavinia.png",
         "funcao": "Equipe de Matemática"
       },
       {
         "nome": "Kayla Wencionek Teixeira",
-        "imagem": "assets/Compilando Ideias/Sobre nossa equipe/image_04.png",
+        "imagem": "assets/Compilando Ideias/Compilando Ideias/Sobre nossa equipe/image_04.png",
         "funcao": "Equipe Social"
       },
       {
         "nome": "Ana Julia Santos Siqueira",
-        "imagem": "assets/Compilando Ideias/Sobre nossa equipe/image_05.png",
+        "imagem": "assets/Compilando Ideias/Compilando Ideias/Sobre nossa equipe/image_05.png",
         "funcao": "Equipe Social"
       },
       {
         "nome": "Ana Beatriz Borges Julião",
-        "imagem": "assets/Compilando Ideias/Sobre nossa equipe/image_06.png",
+        "imagem": "assets/Compilando Ideias/Compilando Ideias/Sobre nossa equipe/image_06.png",
         "funcao": "Equipe de Matemática"
       },
       {
         "nome": "Carlos Eduardo Ferrari Martins",
-        "imagem": "assets/Compilando Ideias/Sobre nossa equipe/image_07.png",
+        "imagem": "assets/Compilando Ideias/Compilando Ideias/Sobre nossa equipe/image_07.png",
         "funcao": "Equipe de Matemática"
       }
     ],
@@ -446,12 +442,8 @@
         "nome": "Francesco Reis de Carli",
         "imagem": "assets/Kairos Tech/Francesco Reis de Carli/image_01.jpg",
         "funcao": "Equipe de Matemática"
-      },
-      {
-        "nome": "Eloah Aguiar Oliveira",
-        "imagem": null,
-        "funcao": "Equipe social"
       }
+    
     ],
     "ods": [
       8
@@ -476,7 +468,7 @@
     "membros_equipe": [
       {
         "nome": "Gabriel Carlos Muniz Vago",
-        "imagem": "assets/Loucos e Sonhadores 3_ O Ato Final/Equipe - Loucos e Sonhadores/p01_04_Im41.jpg",
+        "imagem": "assets/Loucos e Sonhadores 3_ O Ato Final/Equipe - Loucos e Sonhadores/gabriel.jpg",
         "funcao": "Equipe social"
       },
       {
@@ -496,12 +488,12 @@
       },
       {
         "nome": "Vitória Cruz de Aguiar",
-        "imagem": "assets/Loucos e Sonhadores 3_ O Ato Final/Equipe - Loucos e Sonhadores/p01_07_Im96.jpg",
+        "imagem": "assets/Loucos e Sonhadores 3_ O Ato Final/Equipe - Loucos e Sonhadores/vitoria.jpg",
         "funcao": "Equipe de MAtemática"
       },
       {
         "nome": "Matheus Policário Amorim",
-        "imagem": "assets/Loucos e Sonhadores 3_ O Ato Final/Equipe - Loucos e Sonhadores/p01_01_Im134.jpg",
+        "imagem": "assets/Loucos e Sonhadores 3_ O Ato Final/Equipe - Loucos e Sonhadores/policario.jpg",
         "funcao": "Equipe de Matemática"
       }
     ],
@@ -530,32 +522,32 @@
     "membros_equipe": [
       {
         "nome": "Pedro Santos Borges",
-        "imagem": "assets/Mecatech/Equipe Mecatech - PetCare/p03_01_X10.jpg",
+        "imagem": "assets/Mecatech/pedro.jpeg",
         "funcao": "Equipe social"
       },
       {
         "nome": "Inácio Queiroz Bergo Zangirolami",
-        "imagem": "assets/Mecatech/Equipe Mecatech - PetCare/p03_02_X12.jpg",
+        "imagem": "assets/Mecatech/inacio.jpeg",
         "funcao": "Equipe social"
       },
       {
         "nome": "Maria Clara de Moura e Silva Barcelos",
-        "imagem": "assets/Mecatech/Equipe Mecatech - PetCare/p04_01_X15.png",
+        "imagem": "assets/Mecatech/maria.jpeg",
         "funcao": "Equipe social"
       },
       {
         "nome": "Daniel Bromonschenkel Barros",
-        "imagem": "assets/Mecatech/Equipe Mecatech - PetCare/p04_02_X16.jpg",
+        "imagem": "assets/Mecatech/daniel.jpeg",
         "funcao": "Equipe de Matemática"
       },
       {
         "nome": "Rian Dezan dos Santos",
-        "imagem": "assets/Mecatech/Equipe Mecatech - PetCare/p05_01_X19.jpg",
+        "imagem": "assets/Mecatech/rian.jpeg",
         "funcao": "Equipe de Matemática"
       },
       {
         "nome": "Enzo Garuzzi Lempke",
-        "imagem": "assets/Mecatech/Equipe Mecatech - PetCare/p05_02_X20.jpg",
+        "imagem": "assets/Mecatech/enzo.jpeg",
         "funcao": "Equipe de Matemática"
       }
     ],
@@ -582,32 +574,32 @@
     "membros_equipe": [
       {
         "nome": "Andriy Gabriel Magnago Polastrelli",
-        "imagem": "assets/Nirvana/Sobre o projeto Conecta+ e a equipe Nirvana/image_01.png",
+        "imagem": "assets/Nirvana/andriy.jpeg",
         "funcao": "Equipe social"
       },
       {
         "nome": "Arthur Fabrício da Silva Pires de Oliveira",
-        "imagem": "assets/Nirvana/Sobre o projeto Conecta+ e a equipe Nirvana/image_02.png",
+        "imagem": "assets/Nirvana/arthur.jpeg",
         "funcao": "Equipe de Matemática."
       },
       {
         "nome": "Victoria da Silva Maciel",
-        "imagem": "assets/Nirvana/Sobre o projeto Conecta+ e a equipe Nirvana/image_03.png",
+        "imagem": "assets/Nirvana/victoria.jpeg",
         "funcao": "Equipe de Matemática."
       },
       {
         "nome": "Brayan Emanuel Carvalho Boto",
-        "imagem": "assets/Nirvana/Sobre o projeto Conecta+ e a equipe Nirvana/image_04.png",
+        "imagem": "assets/Nirvana/brayan.jpeg",
         "funcao": "Equipe Social."
       },
       {
         "nome": "Guilherme Villas Boas Braz",
-        "imagem": "assets/Nirvana/Sobre o projeto Conecta+ e a equipe Nirvana/image_05.png",
+        "imagem": "assets/Nirvana/guilherme.jpeg",
         "funcao": "Equipe Social."
       },
       {
         "nome": "Thiago de Aguiar da Silva",
-        "imagem": "assets/Nirvana/Sobre o projeto Conecta+ e a equipe Nirvana/image_06.png",
+        "imagem": "assets/Nirvana/thiago.jpeg",
         "funcao": "Equipe Social."
       }
     ],
@@ -688,17 +680,17 @@
     "membros_equipe": [
       {
         "nome": "Lucas Bernardino Miranda",
-        "imagem": "assets/Os Six Sevens/EQUIPE OS SIX SEVENS – ECOPOUPANÇA (1)/p02_01_X8.png",
+        "imagem": "assets/Os Six Sevens/lucas.jpeg",
         "funcao": "Equipe de Matemática"
       },
       {
         "nome": "João Aguiar Bissoli",
-        "imagem": "assets/Os Six Sevens/EQUIPE OS SIX SEVENS – ECOPOUPANÇA (1)/p03_01_X12.png",
+        "imagem": "assets/Os Six Sevens/joao.jpeg",
         "funcao": "Equipe de Matemática"
       },
       {
         "nome": "Gabriel Corrêa Cardoso",
-        "imagem": "assets/Os Six Sevens/EQUIPE OS SIX SEVENS – ECOPOUPANÇA (1)/p04_01_X15.png",
+        "imagem": "assets/Os Six Sevens/gabriel.jpeg",
         "funcao": "Equipe social"
       }
     ],
@@ -830,27 +822,27 @@
     "membros_equipe": [
       {
         "nome": "Enzo Versiani Rodrigues Lima",
-        "imagem": "assets/Sapiens/App Sapience/p02_01_X12.jpg",
+        "imagem": "assets/Sapiens/Fotos da Equipe/enzo.jpg",
         "funcao": "Equipe social"
       },
       {
         "nome": "João Paulo Schaffel Bremenkamp",
-        "imagem": "assets/Sapiens/App Sapience/p02_02_X14.jpg",
+        "imagem": "assets/Sapiens/Fotos da Equipe/bremem.jpg",
         "funcao": "Equipe de Matemática"
       },
       {
         "nome": "Arthur Pazes Bernardo",
-        "imagem": "assets/Sapiens/App Sapience/p02_03_X15.jpg",
+        "imagem": "assets/Sapiens/Fotos da Equipe/artur.jpg",
         "funcao": "Equipe social"
       },
       {
         "nome": "Evelyn Nobre dos Santos",
-        "imagem": "assets/Sapiens/App Sapience/p03_01_X18.jpg",
+        "imagem": "assets/Sapiens/Fotos da Equipe/evelyn.jpg",
         "funcao": "Equipe social"
       },
       {
         "nome": "Sophia Borges Silva",
-        "imagem": "assets/Sapiens/App Sapience/p03_02_X19.jpg",
+        "imagem": "assets/Sapiens/Fotos da Equipe/sofia.jpg",
         "funcao": "Equipe de Matemática"
       }
     ],
